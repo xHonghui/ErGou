@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_frog_loading"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <!--这里先留坑，主要是marginTop适配Fragment，应该根据页面高度判断的-->
+    <ProgressBar
+        android:id="@+id/progress_loading"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="@dimen/dp_40"
+        android:indeterminate="true"
+        android:indeterminateDrawable="@drawable/anim_loading"
+        android:padding="5dp"
+        android:visibility="visible" />
+
+</LinearLayout>

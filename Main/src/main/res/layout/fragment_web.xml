@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.laka.androidlib.widget.titlebar.TitleBarView
+        android:id="@+id/title_bar_web"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/normal_title_bar_height"
+        app:back_ground_color="@color/color_main"
+        app:bottom_divider_visibility="false"
+        app:title_text_color="@color/black" />
+
+    <RelativeLayout
+        android:id="@+id/fl_web_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_bar_web">
+
+        <ViewStub
+            android:id="@+id/web_stub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout="@layout/layout_webview" />
+
+        <ViewStub
+            android:id="@+id/web_x5_stub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout="@layout/layout_x5_webview" />
+
+        <ProgressBar
+            android:id="@+id/pb_web"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:max="100"
+            android:progressDrawable="@drawable/drawable_progress_bar" />
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

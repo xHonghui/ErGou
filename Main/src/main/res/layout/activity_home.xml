@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.laka.androidlib.widget.NoScrollViewPager
+        android:id="@+id/vp_home_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/divider_home"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/divider_home"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0.1"
+        android:background="@color/color_divider"
+        app:layout_constraintBottom_toTopOf="@id/magicIndicator"
+        app:layout_constraintTop_toBottomOf="@id/vp_home_container" />
+
+    <!--<com.flyco.tablayout.CommonTabLayout-->
+        <!--android:id="@+id/tab_home_indicator"-->
+        <!--android:visibility="gone"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/dp_50"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@id/divider_home"-->
+        <!--app:tl_iconGravity="TOP"-->
+        <!--app:tl_iconHeight="@dimen/dp_22"-->
+        <!--app:tl_iconMargin="@dimen/dp_1"-->
+        <!--app:tl_iconWidth="@dimen/dp_22"-->
+        <!--app:tl_textSelectColor="@color/color_main"-->
+        <!--app:tl_textUnselectColor="@color/color_font"-->
+        <!--app:tl_textsize="@dimen/normal_font_size_10" />-->
+    <net.lucode.hackware.magicindicator.MagicIndicator
+        android:id="@+id/magicIndicator"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider_home"
+        android:layout_height="@dimen/dp_50" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/dp_6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <!--<LinearLayout-->
+            <!--android:id="@+id/ll_ergou"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="center_horizontal"-->
+            <!--android:orientation="vertical">-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="@dimen/dp_45"-->
+                <!--android:layout_height="@dimen/dp_45"-->
+                <!--android:src="@drawable/selector_ergou_icon" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="购小二"-->
+                <!--android:textColor="@color/color_font"-->
+                <!--android:textSize="@dimen/sp_10" />-->
+
+        <!--</LinearLayout>-->
+
+        <!--<android.support.constraint.ConstraintLayout-->
+            <!--android:id="@+id/cl_spot"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:visibility="gone"-->
+            <!--app:layout_constraintRight_toRightOf="parent"-->
+            <!--app:layout_constraintTop_toTopOf="parent">-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/tv_msg_count"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:background="@drawable/spot_circlt_ellipse_red"-->
+                <!--android:gravity="center"-->
+                <!--android:minHeight="@dimen/dp_13"-->
+                <!--android:minWidth="@dimen/dp_13"-->
+                <!--android:paddingLeft="@dimen/dp_2"-->
+                <!--android:paddingRight="@dimen/dp_2"-->
+                <!--android:text="9"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="@dimen/sp_9"-->
+                <!--app:layout_constraintBottom_toBottomOf="parent"-->
+                <!--app:layout_constraintLeft_toLeftOf="parent"-->
+                <!--app:layout_constraintRight_toRightOf="parent"-->
+                <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+
+        <!--</android.support.constraint.ConstraintLayout>-->
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>

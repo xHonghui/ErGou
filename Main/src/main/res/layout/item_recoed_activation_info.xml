@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_yellow"
+    android:paddingBottom="@dimen/dp_10"
+    android:paddingLeft="@dimen/dp_16"
+    android:paddingRight="@dimen/dp_16"
+    android:paddingTop="@dimen/dp_10"
+    android:text="激活说明：战友在完成第一次返利购物后自动激活，推广奖励的待结补贴也会自动变为可用补贴。"
+    android:textColor="@color/color_f68108"
+    android:textSize="@dimen/sp_12" />

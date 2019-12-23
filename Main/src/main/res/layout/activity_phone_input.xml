@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_theme_bg"
+    android:paddingLeft="@dimen/dp_20"
+    android:paddingRight="@dimen/dp_20">
+
+    <TextView
+        android:id="@+id/tv_hello_ergou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_60"
+        android:text="@string/hello_ergou"
+        android:textColor="@color/color_303030"
+        android:textSize="@dimen/sp_26"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/ll_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_25"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/dp_13"
+        android:paddingTop="@dimen/dp_13"
+        app:layout_constraintTop_toBottomOf="@+id/tv_hello_ergou">
+
+        <EditText
+            android:id="@+id/et_phone_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="请输入手机号码"
+            android:inputType="number"
+            android:maxLines="1"
+            android:paddingBottom="@dimen/dp_3"
+            android:paddingTop="@dimen/dp_3"
+            android:textColor="@color/color_black"
+            android:textColorHint="@color/color_black_aaa"
+            android:textSize="@dimen/sp_14" />
+
+        <ImageView
+            android:id="@+id/iv_txt_remove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/dp_3"
+            android:paddingBottom="@dimen/dp_3"
+            android:paddingLeft="@dimen/dp_6"
+            android:paddingRight="@dimen/dp_6"
+            android:src="@drawable/btn_delete_round"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="0dp"
+        android:layout_height="1px"
+        android:background="@color/color_main"
+        app:layout_constraintLeft_toLeftOf="@+id/ll_input"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_input" />
+
+    <TextView
+        android:id="@+id/tv_alert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_18"
+        android:textColor="@color/color_929292"
+        android:textSize="@dimen/dp_12"
+        app:layout_constraintTop_toBottomOf="@+id/line" />
+
+    <com.laka.androidlib.widget.SelectorButton
+        android:id="@+id/btn_confirm_phone_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_35"
+        android:text="获取验证码"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_16"
+        app:bg_radius="@dimen/dp_5"
+        app:bga_color="@color/color_main"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_alert" />
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="@dimen/dp_22"
+        android:layout_height="@dimen/dp_22"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@drawable/seletor_nav_btn_back"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

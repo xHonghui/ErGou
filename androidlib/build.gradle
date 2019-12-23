@@ -1,0 +1,100 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
+
+android {
+
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+
+        manifestPlaceholders = [
+                DESIGN_DP   : "320",
+                COMPAT_WIDTH: "true"
+        ]
+
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled false
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    // 系统控件依赖
+    compile rootProject.ext.dependencies["support-v4"]
+    compile rootProject.ext.dependencies["appcompat-v7"]
+    compile rootProject.ext.dependencies["design"]
+    compile rootProject.ext.dependencies["recyclerview"]
+    compile rootProject.ext.dependencies["cardview"]
+    compile rootProject.ext.dependencies["ConstraintLayout"]
+    // MultiDex分包
+    compile rootProject.ext.dependencies["MultiDex"]
+    // 官方AndroidX（JetPack）组件
+    compile rootProject.ext.dependencies["AndroidLifeCycleRunTime"]
+    compile rootProject.ext.dependencies["AndroidLifeCycleCommon"]
+    annotationProcessor rootProject.ext.dependencies["AndroidLifeCycleCompiler"]
+    // 第三方UI框架
+    compile rootProject.ext.dependencies["SmartRefresh"]
+    compile rootProject.ext.dependencies["BRVAH"]
+    compile rootProject.ext.dependencies["SwipeBackFragment"]
+    compile rootProject.ext.dependencies["FlycoTabLayout"]
+    compile rootProject.ext.dependencies["Banner"]
+    // 网路请求
+    compile rootProject.ext.dependencies["retrofit"]
+    compile rootProject.ext.dependencies["retrofitAdapter"]
+    compile rootProject.ext.dependencies["retrofitGsonConverter"]
+    compile rootProject.ext.dependencies["okhttp"]
+    compile rootProject.ext.dependencies["okhttp3Interceptor"]
+    // 事件流控制依赖
+    compile rootProject.ext.dependencies["EventBus"]
+    compile rootProject.ext.dependencies["RxJava"]
+    compile rootProject.ext.dependencies["RxAndroid"]
+    compile rootProject.ext.dependencies["RxLifeCycle"]
+    compile rootProject.ext.dependencies["RxLifeCycleComponents"]
+    // 图片库以及处理类相关依赖
+    compile 'com.facebook.fresco:fresco:1.8.0'
+    compile rootProject.ext.dependencies["glide"]
+    compile rootProject.ext.dependencies["QrCodeZxing"]
+    compile rootProject.ext.dependencies["QrCodeZBar"]
+//    compile rootProject.ext.dependencies["glideTransformation"]
+//    compile rootProject.ext.dependencies["glideUIImage"]
+    //    compile rootProject.ext.dependencies["glideOkhttpModule"]
+    //    annotationProcessor rootProject.ext.dependencies["glideCompiler"]
+    // 第三方工具类依赖
+    compile rootProject.ext.dependencies["butterknife"]
+    annotationProcessor rootProject.ext.dependencies["butterknifeCompiler"]
+    compile rootProject.ext.dependencies["logger"]
+    // 第三方控件
+    compile rootProject.ext.dependencies["RoundedImageView"]
+    // 友盟
+    compile rootProject.ext.dependencies["UMCommon"]
+    compile rootProject.ext.dependencies["UMAnalytics"]
+    // 微信
+    compile rootProject.ext.dependencies["WechatWithoutMta"]
+    // 图片裁剪
+    compile 'com.soundcloud.android:android-crop:0.9.10@aar'
+    compile 'me.shaohui.advancedluban:library:1.3.5'
+    compile 'com.github.hackware1993:MagicIndicator:1.5.0'
+    implementation 'com.android.support:support-annotations:25.0.1'
+}

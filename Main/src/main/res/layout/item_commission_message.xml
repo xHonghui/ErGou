@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dp_10"
+    android:layout_marginRight="@dimen/dp_10"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_12"
+        android:text="2019.02.14"
+        android:textColor="@color/color_aaaaaa"
+        android:textSize="@dimen/sp_12" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_12"
+        android:background="@drawable/bg_commission_message_item"
+        android:paddingBottom="@dimen/dp_13"
+        android:paddingLeft="@dimen/dp_18"
+        android:paddingRight="@dimen/dp_18"
+        android:paddingTop="@dimen/dp_13">
+
+
+        <TextView
+            android:id="@+id/tv_commission_reward"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_5"
+            android:drawableLeft="@drawable/message_icon_money"
+            android:drawablePadding="@dimen/dp_5"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:maxLines="1"
+            android:text="邀请战友奖励补贴"
+            android:textColor="@color/color_303030"
+            android:textSize="@dimen/sp_13"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/tv_amount" />
+
+        <TextView
+            android:id="@+id/tv_order_number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_5"
+            android:layout_marginTop="@dimen/dp_8"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:maxLines="1"
+            android:text="订号编号：2483949599993332135"
+            android:textColor="@color/color_aaaaaa"
+            android:textSize="@dimen/dp_12"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/tv_amount_txt"
+            app:layout_constraintTop_toBottomOf="@+id/tv_commission_reward" />
+
+        <TextView
+            android:id="@+id/tv_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="+18.88"
+            android:textColor="@color/color_05a585"
+            android:textSize="@dimen/sp_15"
+            app:layout_constraintRight_toRightOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tv_amount_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="可用补贴"
+            android:textColor="@color/color_aaaaaa"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_order_number"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</LinearLayout>

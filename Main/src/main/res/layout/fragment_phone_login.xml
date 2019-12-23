@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sv_root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_login"
+    android:fitsSystemWindows="true"
+    android:scrollbars="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_root_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:paddingLeft="@dimen/dp_35"
+            android:paddingRight="@dimen/dp_35">
+
+            <ImageView
+                android:id="@+id/iv_login_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_95"
+                android:src="@drawable/login_logo"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/text_view_86"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_70"
+                android:text="+86"
+                android:textColor="@color/color_font"
+                app:layout_constraintTop_toBottomOf="@+id/iv_login_logo" />
+
+            <EditText
+                android:id="@+id/edit_text_phone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_40"
+                android:layout_marginTop="@dimen/dp_65"
+                android:background="@null"
+                android:ellipsize="end"
+                android:hint="@string/please_enter_your_mobile_phone_number"
+                android:inputType="number"
+                android:maxLines="1"
+                android:paddingBottom="@dimen/dp_5"
+                android:paddingTop="@dimen/dp_5"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintLeft_toRightOf="@+id/text_view_86"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_login_logo" />
+
+
+            <View
+                android:id="@+id/view_line_one"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="@dimen/dp_15"
+                android:background="@color/color_common_list_bg"
+                app:layout_constraintTop_toBottomOf="@+id/edit_text_phone" />
+
+
+            <EditText
+                android:id="@+id/edit_text_verification_code"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_15"
+                android:background="@null"
+                android:ellipsize="end"
+                android:hint="@string/please_enter_verification_code"
+                android:inputType="number"
+                android:maxLines="1"
+                android:paddingBottom="@dimen/dp_5"
+                android:paddingTop="@dimen/dp_5"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/text_view_get_verification_code"
+                app:layout_constraintTop_toBottomOf="@+id/view_line_one" />
+
+
+            <TextView
+                android:id="@+id/text_view_get_verification_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/dp_3"
+                android:paddingLeft="@dimen/dp_3"
+                android:paddingRight="@dimen/dp_3"
+                android:paddingTop="@dimen/dp_3"
+                android:text="获取验证码"
+                android:textColor="@color/color_font"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintBottom_toBottomOf="@+id/edit_text_verification_code"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/edit_text_verification_code" />
+
+            <View
+                android:id="@+id/view_line_tow"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="@dimen/dp_15"
+                android:background="@color/color_common_list_bg"
+                app:layout_constraintTop_toBottomOf="@+id/edit_text_verification_code" />
+
+
+            <com.laka.androidlib.widget.SelectorButton
+                android:id="@+id/text_view_phone_login"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_40"
+                android:gravity="center"
+                android:text="登录"
+                android:textColor="@color/white"
+                app:bg_radius="@dimen/dp_5"
+                app:bga_color="@color/color_main"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_line_tow" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_18"
+            android:layout_marginTop="@dimen/dp_18"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="@dimen/dp_22"
+                android:layout_height="@dimen/dp_22"
+                android:background="@drawable/seletor_nav_btn_close" />
+
+        </FrameLayout>
+
+
+    </RelativeLayout>
+
+</android.support.v4.widget.NestedScrollView>

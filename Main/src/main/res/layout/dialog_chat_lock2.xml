@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv_chat_pop_close"
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="@dimen/dp_40"
+        android:alpha=".6"
+        android:padding="@dimen/dp_10"
+        android:src="@drawable/ic_close"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_chat_pop_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10"
+        android:alpha=".8"
+        android:background="@drawable/red_hollow_corner_round_bg"
+        android:gravity="center"
+        android:paddingBottom="@dimen/dp_2"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_2"
+        android:text="跳过"
+        android:textColor="@color/white"
+        android:visibility="gone"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"
+        android:background="@drawable/pop_gxe_bg2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="w,58:51"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- 文字区域 -->
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_txt_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/dp_10"
+            app:layout_constraintBottom_toTopOf="@+id/ll_button_bottom"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_operation_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/pop_gxe_bg_up"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:text="按以下操作即可解锁机器人购小二哦〜"
+                    android:textColor="@color/color_303030"
+                    android:textSize="@dimen/sp_13"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/cl_content_bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/pop_gxe_bg_down"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_operation_title">
+
+                    <!-- 购小二淘口令搜索 -->
+                    <TextView
+                        android:id="@+id/tv_tkl_search_key"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="5"
+                        android:text="购小二淘口令搜索购小二淘口令搜索购小二淘口令搜索"
+                        android:textColor="@color/color_656565"
+                        android:textSize="@dimen/dp_13"
+                        android:visibility="gone" />
+
+                    <!-- 购小二操作步骤 -->
+                    <LinearLayout
+                        android:id="@+id/ll_chat_pop_tutorial"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible"
+                        android:weightSum="4"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_chat_pop_message">
+
+                        <LinearLayout
+                            android:id="@+id/ll_chat_tutorial_taobao"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_58"
+                                android:layout_height="@dimen/dp_58"
+                                android:src="@drawable/ic_chat_tutorial_taobao"
+                                app:layout_constraintLeft_toLeftOf="parent" />
+
+                            <TextView
+                                style="@style/ChatTutorialText"
+                                android:text="@string/chat_lock_tutorial_taobao" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_chat_tutorial_share"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_58"
+                                android:layout_height="@dimen/dp_58"
+                                android:src="@drawable/ic_chat_tutorial_share"
+                                app:layout_constraintLeft_toLeftOf="parent" />
+
+                            <TextView
+                                style="@style/ChatTutorialText"
+                                android:text="@string/chat_lock_tutorial_share" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_chat_tutorial_link"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_58"
+                                android:layout_height="@dimen/dp_58"
+                                android:src="@drawable/ic_chat_tutorial_link"
+                                app:layout_constraintLeft_toLeftOf="parent" />
+
+                            <TextView
+                                style="@style/ChatTutorialText"
+                                android:text="@string/chat_lock_tutorial_link" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_chat_tutorial_ergou"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_58"
+                                android:layout_height="@dimen/dp_58"
+                                android:src="@drawable/ic_chat_tutorial_ergou"
+                                app:layout_constraintLeft_toLeftOf="parent" />
+
+                            <TextView
+                                style="@style/ChatTutorialText"
+                                android:text="@string/chat_lock_tutorial_ergou" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.constraint.ConstraintLayout>
+
+                <View
+                    android:id="@+id/view_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginLeft="@dimen/dp_6"
+                    android:layout_marginRight="@dimen/dp_6"
+                    android:background="@color/color_common_bg"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_operation_title" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <!-- 底部按钮区 -->
+        <LinearLayout
+            android:id="@+id/ll_button_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_42"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <com.laka.androidlib.widget.SelectorButton
+                android:id="@+id/sb_back"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/dp_5"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="返回首页"
+                android:textColor="@color/white"
+                app:bg_radius="@dimen/dp_5"
+                app:bga_color="@color/color_7C64E3"
+                app:border_color="@color/white" />
+
+            <!--
+                v2.2.0活动版本暂时更改为知道了
+                android:text="去淘宝"
+             -->
+            <com.laka.androidlib.widget.SelectorButton
+                android:id="@+id/sb_go"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="知道了"
+                android:textColor="@color/color_055760"
+                app:bg_radius="@dimen/dp_5"
+                app:bga_color="#90ffe3" />
+
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>
+

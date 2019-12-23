@@ -1,0 +1,80 @@
+package com.laka.androidlib.widget.dialog;
+
+import android.content.Context;
+import android.graphics.drawable.AnimationDrawable;
+import android.os.Bundle;
+import android.view.Gravity;
+import android.view.WindowManager;
+import android.widget.ImageView;
+
+import com.laka.androidlib.R;
+
+/**
+ * @Author:summer
+ * @Date:2019/1/12
+ * @Description: 加载dialog，半成品
+ */
+public class TransitionLoadingDialog extends BaseDialog {
+
+    private ImageView mImageViewLoading;
+    private AnimationDrawable mAnimDrawable;
+
+    public TransitionLoadingDialog(Context context) {
+        this(context, R.style.commonLoadingDialog);
+    }
+
+    public TransitionLoadingDialog(Context context, int themeResId) {
+        super(context, themeResId);
+    }
+
+    public TransitionLoadingDialog(Context context, boolean cancelable, OnCancelListener cancelListener) {
+        super(context, cancelable, cancelListener);
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setCanceledOnTouchOutside(false);
+    }
+
+    @Override
+    protected void initView() {
+        setGravityType(Gravity.CENTER);
+        setLayoutParams(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
+        mImageViewLoading = findViewById(R.id.image_view_loading);
+        mAnimDrawable = (AnimationDrawable) getContext().getResources().getDrawable(R.drawable.anim_loading);
+        mImageViewLoading.setImageDrawable(mAnimDrawable);
+    }
+
+    @Override
+    protected void initEvent() {
+
+    }
+
+    @Override
+    protected void initData() {
+
+    }
+
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.dialog_loading_transition;
+    }
+
+    @Override
+    public void show() {
+        super.show();
+        if (mAnimDrawable != null) {
+            mAnimDrawable.start();
+        }
+    }
+
+    @Override
+    public void dismiss() {
+        super.dismiss();
+        if (mAnimDrawable != null) {
+            mAnimDrawable.stop();
+        }
+    }
+}

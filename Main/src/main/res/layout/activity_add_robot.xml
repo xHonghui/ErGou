@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_common_bg">
+
+    <com.laka.androidlib.widget.titlebar.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/normal_title_bar_height"
+        android:background="@color/white" />
+
+    <EditText
+        android:id="@+id/et_robot_add_friend"
+        style="@style/DefaultInputEditText"
+        android:hint="@string/robot_add_friend_input_hint"
+        app:layout_constraintTop_toBottomOf="@id/title_bar" />
+
+    <TextView
+        android:id="@+id/tv_robot_add_hint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_18"
+        android:layout_marginRight="@dimen/dp_18"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="@string/robot_add_friend_hint"
+        android:textColor="@color/gray_88"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_robot_add_friend" />
+
+    <com.laka.androidlib.widget.SelectorButton
+        android:id="@+id/btn_robot_add"
+        style="@style/DefaultMainButton"
+        android:text="@string/commit"
+        android:textColor="@color/white"
+        app:bg_radius="@dimen/dp_5"
+        app:bga_color="@color/color_main"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_robot_add_hint"
+        app:press_text_color="@color/white" />
+
+</android.support.constraint.ConstraintLayout>

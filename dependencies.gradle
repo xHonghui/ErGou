@@ -1,0 +1,207 @@
+// 系统控件
+def supportVersion = "26.1.0"
+def constraintLayoutVersion = "1.1.3"
+def JetPackVersion = "1.1.1"
+def nineOldAndroidVersion = "2.4.0"
+
+// RxJava
+def RxJava = "2.x.y"
+def RxAndroid = "2.0.1"
+def RxLifeCycle = "2.2.0"
+def RxCacheConvert = "0.0.3"
+
+// Retrofit + OkHttp等网络版本
+def RetrofitVersion = "2.5.0"
+def OkHttpVersion = "3.10.0"
+def GsonVersion = "2.8.5"
+def DaggerVersion = "2.4"
+
+// ARouter路由类
+def ARouterVersion = "1.2.2"
+def ARouterAnnotationVersion = "1.1.3"
+
+// GreenDao ORM数据库
+def GreenDaoVersion = "3.2.2"
+def GreenDaoUpdateVersion = "v1.3.0"
+
+//Glide
+def GlideVersion = "3.7.0"
+
+// 工具
+def ButterKnifeVersion = "8.4.0"
+def LeakCanaryVersion = "1.6.3"
+def LoggerVersion = "1.3"
+def EventBusVersion = "3.1.1"
+
+// UIFrame
+def percentLayoutVersion = "1.0.1"
+def autoLayoutVersion = "1.4.5"
+def swipeMenuVersion = "V1.3.0"
+def galleryFinalVersion = "1.0.9"
+def spinKitVersion = "1.1.0'"
+def smartRefreshVersion = "1.1.0-alpha-20"
+def swipeBackFragmentVersion = "0.4.0"
+
+// 第三方服务商
+def pingVersion = "2.1.17"
+def huaweiPushVersion = "2.5.2.302"
+
+//友盟
+def umengCommonVersion = "2.1.0"
+def umengAnalyticsVersion = "8.1.1"
+//极光
+def jpushVersion = "3.3.4"
+def jcoreVersion = "2.1.2"
+//wcdb
+def wcdbVersion = "1.0.8"
+def protobufVersion = "3.6.1"
+def skeletonVersion = "1.1.2"
+def shimmerlayoutVersion = "2.1.0"
+
+
+project.ext {
+    android = [
+            compileSdkVersion: 27,
+            buildToolsVersion: "26.0.2",
+            applicationId    : "com.laka.ergou",
+            minSdkVersion    : 19,
+            targetSdkVersion : 26,
+            versionCode      : 1,
+            versionName      : "1.0.0"
+    ]
+
+    dependencies = [
+            //android-support
+            "support-v4"                 : "com.android.support:support-v4:${supportVersion}",
+            "appcompat-v7"               : "com.android.support:appcompat-v7:${supportVersion}",
+            "design"                     : "com.android.support:design:${supportVersion}",
+            "recyclerview"               : "com.android.support:recyclerview-v7:${supportVersion}",
+            "cardview"                   : "com.android.support:cardview-v7:${supportVersion}",
+            "palette"                    : "com.android.support:palette-v7:${supportVersion}",
+            "ConstraintLayout"           : "com.android.support.constraint:constraint-layout:${constraintLayoutVersion}",
+            "NineOldAndroid"             : "com.nineoldandroids:library:${nineOldAndroidVersion}",
+
+            // architecture---官方AndroidX组件
+            // LifeCycle+ViewModel+LiveData
+            "AndroidViewModelAndLiveData": "android.arch.lifecycle:extensions:$JetPackVersion",
+            "AndroidLifeCycleRunTime"    : "android.arch.core:runtime:$JetPackVersion",
+            "AndroidLifeCycleCommon"     : "android.arch.lifecycle:common:$JetPackVersion",
+            "AndroidLifeCycleCompiler"   : "android.arch.lifecycle:compiler:$JetPackVersion",
+
+            // apk拆包
+            "MultiDex"                   : "com.android.support:multidex:1.0.3",
+
+            //rx
+            "RxJava"                     : "io.reactivex.rxjava2:rxjava:${RxJava}",
+            "RxAndroid"                  : "io.reactivex.rxjava2:rxandroid:${RxAndroid}",
+            "RxLifeCycle"                : "com.trello.rxlifecycle2:rxlifecycle-android:${RxLifeCycle}",
+            "RxLifeCycleComponents"      : "com.trello.rxlifecycle2:rxlifecycle-components:${RxLifeCycle}",
+            "RxCache"                    : "com.github.VictorAlbertos.RxCache:runtime:1.8.1-2.x",
+            "RxCacheConvert"             : "com.github.VictorAlbertos.Jolyglot:gson:${RxCacheConvert}",
+
+            //retrofit
+            "retrofit"                   : "com.squareup.retrofit2:retrofit:${RetrofitVersion}",
+//            "retrofitAdapter"      : "com.squareup.retrofit2:adapter-rxjava:${RetrofitVersion}",  这个库只支持rxjava1.0
+            "retrofitAdapter"            : "com.squareup.retrofit2:adapter-rxjava2:${RetrofitVersion}",
+            "retrofitGsonConverter"      : "com.squareup.retrofit2:converter-gson:${RetrofitVersion}",
+
+            //Http
+            "okhttp"                     : "com.squareup.okhttp3:okhttp:${OkHttpVersion}",
+            "okhttpUtils"                : "com.zhy:okhttputils:2.6.2",
+            "okhttp3Interceptor"         : "com.squareup.okhttp3:logging-interceptor:${OkHttpVersion}",
+            "gson"                       : "com.google.code.gson:gson:${GsonVersion}",
+
+            //dagger
+            "dagger"                     : "com.google.dagger:dagger:${DaggerVersion}",
+            "daggerCompiler"             : "com.google.dagger:dagger-compiler:${DaggerVersion}",
+            "javaAnnotation"             : "org.glassfish:javax.annotation:10.0-b28",
+
+            //ARouter
+            "ARouter"                    : "com.alibaba:arouter-api:${ARouterVersion}",
+            "ARouterCompiler"            : "com.alibaba:arouter-compiler:${ARouterAnnotationVersion}",
+
+            //GreenDao
+            "greenDao"                   : "org.greenrobot:greendao:${GreenDaoVersion}",
+            "greenDaoHelper"             : "com.github.yuweiguocn:GreenDaoUpgradeHelper:${GreenDaoUpdateVersion}",
+
+            //Glide
+            "glide"                      : "com.github.bumptech.glide:glide:${GlideVersion}",
+            "glideTransformation"        : "jp.wasabeef:glide-transformations:3.0.1",
+            "glideUIImage"               : "jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1",
+            "glideCompiler"              : "com.github.bumptech.glide:compiler:${GlideVersion}",
+            "glideOkhttpModule"          : "com.github.bumptech.glide:okhttp-integration:1.5.0@aar",
+
+            //ButterKnife
+            "butterknife"                : "com.jakewharton:butterknife:${ButterKnifeVersion}",
+            "butterknifeCompiler"        : "com.jakewharton:butterknife-compiler:${ButterKnifeVersion}",
+
+            //EventBus
+            "EventBus"                   : "org.greenrobot:eventbus:${EventBusVersion}",
+
+            //Others--Utils
+            "leakCanaryDebug"            : "com.squareup.leakcanary:leakcanary-android:${LeakCanaryVersion}",
+            "leakCanaryRelease"          : "com.squareup.leakcanary:leakcanary-android-no-op:${LeakCanaryVersion}",
+            "leakCanaryTest"             : "com.squareup.leakcanary:leakcanary-android-no-op:${LeakCanaryVersion}",
+            "logger"                     : "com.orhanobut:logger:${LoggerVersion}",
+            "Luban"                      : "top.zibin:Luban:1.1.1",
+            "QrCodeZxing"                : "cn.bingoogolapple:bga-qrcode-zxing:1.3.6",
+            "QrCodeZBar"                 : "cn.bingoogolapple:bga-qrcode-zbar:1.3.6",
+
+            //UIFrame
+            "PercentLayout"              : "com.zhy:percent-support-extends:${percentLayoutVersion}",
+            "AutoLayout"                 : "com.zhy:autolayout:${autoLayoutVersion}",
+            "swipeMenu"                  : "com.github.mcxtzhang:SwipeDelMenuLayout:${swipeMenuVersion}",
+            "galleryFinal"               : "cn.finalteam:galleryfinal:1.4.8.7",
+            "spinKit"                    : "com.github.ybq:Android-SpinKit:1.1.0",
+            "FlowLayout"                 : "com.hyman:flowlayout-lib:1.1.2",
+            "WheelView"                  : "cn.aigestudio.wheelpicker:WheelPicker:1.1.2",
+            "VLayout"                    : "com.alibaba.android:vlayout:1.2.8",
+            "Banner"                     : "com.youth.banner:banner:1.4.9",
+            "CircleImage"                : "de.hdodenhof:circleimageview:2.1.0",
+            "SmartRefresh"               : "com.scwang.smartrefresh:SmartRefreshLayout:${smartRefreshVersion}",
+            "ImageSelector"              : "com.yancy.imageselector:imageselector:1.3.3",
+            "PickerView"                 : "com.contrarywind:Android-PickerView:3.2.5",
+            "BRVAH"                      : "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30",
+            "XRecycleView"               : "com.jcodecraeer:xrecyclerview:1.3.2",
+            "CityPicker"                 : "liji.library.dev:citypickerview:3.1.6",
+            "MPChart"                    : "com.github.PhilJay:MPAndroidChart:v3.0.1",
+            "FlycoTabLayout"             : "com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar",
+            "SwipeBackFragment"          : "me.yokeyword:swipebackfragment:${swipeBackFragmentVersion}",
+            "RoundedImageView"           : "com.makeramen:roundedimageview:2.3.0",
+
+            //ThirdSDK
+            "QiNiu"                      : "com.qiniu:qiniu-android-sdk:7.2.+",
+            "UMengAnalytics"             : "com.umeng.analytics:analytics:latest.integration",
+            "PingCore"                   : "com.pingxx:pingpp-core:${pingVersion}",
+            "PingUI"                     : "com.pingxx:pingpp-ui:${pingVersion}",
+            "WechatWithMta"              : "com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+",
+            "WechatWithoutMta"           : "com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+",
+            "PingALIPAY"                 : "com.pingxx:pingpp-alipay:${pingVersion}",
+            "PingQPAY"                   : "com.pingxx:pingpp-qpay:${pingVersion}",
+            "PingUPACP"                  : "com.pingxx:pingpp-upacp:${pingVersion}",
+            "Bugly"                      : "com.tencent.bugly:crashreport:latest.release",
+            "BuglyNDK"                   : "com.tencent.bugly:nativecrashreport:latest.release",
+            "TecentMTA"                  : "com.qq.mta:mta:3.4.7-release",
+            "TecentMID"                  : "com.tencent.mid:mid:4.06-Release",
+            "TecentMTAVisible"           : "com.qq.visual:visual:3.4.0.1-beta",
+            "UMPush"                     : "com.umeng.sdk:push:4.2.0",
+            "UMCommon"                   : "com.umeng.umsdk:common:${umengCommonVersion}",
+            "UMAnalytics"                : "com.umeng.umsdk:analytics:${umengAnalyticsVersion}",
+            "UMPushUTDID"                : "com.umeng.sdk:utdid:1.1.5.3",
+            "UMPush_XIAOMI"              : "com.umeng.sdk:push-xiaomi:1.0.0",
+            "UMPush_HUAWEI"              : "com.umeng.sdk:push-huawei:1.0.0",
+            "HuaWeiPush"                 : "com.huawei.android.hms:push:${huaweiPushVersion}",
+            "FlymePush"                  : "com.meizu.flyme.internet:push-ups:4.0.0",
+
+            //极光推送
+            "jpush"                      : "cn.jiguang.sdk:jpush:${jpushVersion}",
+            "jcore"                      : "cn.jiguang.sdk:jcore:${jcoreVersion}",
+
+            // wcdb 数据库
+            "wcdb"                       : "com.tencent.wcdb:wcdb-android:${wcdbVersion}",
+            "protobuf"                   : "com.google.protobuf:protobuf-java:${protobufVersion}",
+            "skeleton"                   : "com.ethanhua:skeleton:${skeletonVersion}",
+            "shimmerlayout"              : "io.supercharge:shimmerlayout:${shimmerlayoutVersion}",
+
+    ]
+}

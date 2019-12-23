@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <!-- 标题 -->
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="88px"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15px"
+            android:src="@drawable/nav_btn_back_n" />
+
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="购小二"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16" />
+
+
+        <TextView
+            android:id="@+id/tv_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20px"
+            android:padding="@dimen/dp_6"
+            android:text="清除"
+            android:textColor="@color/color_txt_black"
+            android:textSize="@dimen/sp_14" />
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <View style="@style/Line" />
+
+    <LinearLayout
+        android:id="@+id/ll_chat_notification"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_32"
+        android:background="@color/color_main"
+        android:gravity="center"
+        android:paddingBottom="@dimen/dp_8"
+        android:paddingLeft="@dimen/dp_14"
+        android:paddingRight="@dimen/dp_14"
+        android:paddingTop="@dimen/dp_8"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_chat_notification" />
+
+        <com.laka.androidlib.widget.MarqueeView
+            android:id="@+id/tv_chat_notification"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_6"
+            android:gravity="center_vertical"
+            android:text="恭喜【煎饺】付款订单获得2.19元"
+            android:textColor="@color/white"
+            android:visibility="visible"
+            android:textSize="@dimen/normal_font_size_small" />
+
+        <TextView
+            android:id="@+id/tv_test"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <!--内容-->
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/llContent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- 聊天列表 -->
+        <com.lqr.refresh.ChatRefreshLayout
+            android:id="@+id/refreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/wechat_chat_bg"
+            android:orientation="vertical">
+
+            <com.lqr.recyclerview.LQRRecyclerView
+                android:id="@+id/rvMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never" />
+        </com.lqr.refresh.ChatRefreshLayout>
+
+        <!-- 填充内容 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/wechat_chat_bg" />
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <View style="@style/Line" />
+
+    <!-- 语音输入、文本输入、表情库、更多功能 -->
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="96px"
+        android:background="@color/wechat_operation_bar_bg"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/ivAudio"
+            android:layout_width="56px"
+            android:layout_height="56px"
+            android:layout_marginLeft="20px"
+            android:layout_marginRight="20px"
+            android:src="@drawable/seletor_wechat_btn_voice" />
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:id="@+id/rl_input"
+                android:layout_width="match_parent"
+                android:layout_height="68px"
+                android:background="@drawable/shape_wechat_input_bg_white"
+                android:gravity="center">
+
+                <EditText
+                    android:id="@+id/etContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="60px"
+                    android:layout_marginLeft="@dimen/dp_8"
+                    android:layout_marginRight="@dimen/dp_8"
+                    android:background="@null"
+                    android:visibility="visible" />
+
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+            <Button
+                android:id="@+id/btnAudio"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="80px"
+                android:background="@drawable/shape_session_btn_voice_normal"
+                android:text="@string/please_to_talk"
+                android:textColor="@color/gray1"
+                android:visibility="gone" />
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+        <ImageView
+            android:id="@+id/ivEmo"
+            android:layout_width="56px"
+            android:layout_height="56px"
+            android:layout_marginLeft="20px"
+            android:layout_marginRight="20px"
+            android:src="@drawable/selector_wechat_btn_face" />
+
+        <ImageView
+            android:id="@+id/ivMore"
+            android:layout_width="56px"
+            android:layout_height="56px"
+            android:layout_marginLeft="8px"
+            android:layout_marginRight="20px"
+            android:src="@drawable/selector_wechat_btn_more" />
+
+        <Button
+            android:id="@+id/btnSend"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="74px"
+            android:layout_height="65px"
+            android:layout_marginRight="10px"
+            android:background="@drawable/shape_session_btn_send"
+            android:text="@string/send"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_13"
+            android:visibility="gone" />
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <View style="@style/Line" />
+
+    <!-- 表情库 -->
+    <com.zhy.autolayout.AutoFrameLayout
+        android:id="@+id/flEmotionView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="350px"
+        android:visibility="gone">
+        <!--表情库UI-->
+        <com.lqr.emoji.EmotionLayout
+            android:id="@+id/elEmotion"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+        <!--其他功能UI-->
+        <include
+            android:id="@+id/llMore"
+            layout="@layout/include_func_layout"
+            android:visibility="gone" />
+    </com.zhy.autolayout.AutoFrameLayout>
+
+</com.zhy.autolayout.AutoLinearLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="commmission_type">
+        <item>本月</item>
+        <item>上月</item>
+        <item>今日</item>
+        <item>昨日</item>
+    </string-array>
+
+    <string-array name="tearm_award_type">
+        <item>全部</item>
+        <item>待结算</item>
+        <item>已结算</item>
+        <item>已失效</item>
+    </string-array>
+</resources>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_common_bg">
+
+    <com.laka.androidlib.widget.titlebar.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/normal_title_bar_height" />
+
+    <TextView
+        android:id="@+id/tv_bind_account_hint"
+        style="@style/DefaultTextNotification"
+        android:drawableLeft="@drawable/ic_notice_round"
+        android:drawablePadding="@dimen/dp_10"
+        android:text="@string/bind_ali_account_hint"
+        app:layout_constraintTop_toBottomOf="@id/title_bar" />
+
+    <!-- 支付宝账号 -->
+    <EditText
+        android:id="@+id/et_bind_account"
+        style="@style/DefaultInputEditText"
+        android:hint="@string/bind_ali_account_input_hint"
+        app:layout_constraintTop_toBottomOf="@id/tv_bind_account_hint" />
+
+    <ImageView
+        android:id="@+id/iv_bind_account_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp_10"
+        android:padding="@dimen/dp_10"
+        android:src="@drawable/btn_delete_round"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@id/et_bind_account"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/et_bind_account" />
+
+    <!-- 姓名 -->
+    <EditText
+        android:id="@+id/et_bind_account_name"
+        style="@style/DefaultInputEditText"
+        android:layout_marginTop="@dimen/dp_14"
+        android:hint="@string/bind_ali_account_name_hint"
+        app:layout_constraintTop_toBottomOf="@id/et_bind_account" />
+
+    <ImageView
+        android:id="@+id/iv_bind_account_name_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp_10"
+        android:padding="@dimen/dp_10"
+        android:src="@drawable/btn_delete_round"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@id/et_bind_account_name"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/et_bind_account_name" />
+
+    <com.laka.androidlib.widget.SelectorButton
+        android:id="@+id/btn_bind_account_commit"
+        style="@style/DefaultMainButton"
+        android:text="@string/ensure"
+        android:textColor="@color/white"
+        app:bg_radius="@dimen/dp_5"
+        app:bga_color="@color/color_main"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_bind_account_name"
+        app:press_text_color="@color/white" />
+
+</android.support.constraint.ConstraintLayout>

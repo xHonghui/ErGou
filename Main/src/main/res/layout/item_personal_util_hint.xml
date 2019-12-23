@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/dp_10">
+
+    <ImageView
+        android:id="@+id/iv_prevent_lost_order"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bg_mine_prevent_lost_order"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintWidth_percent=".94" />
+
+    <com.laka.androidlib.widget.SelectorButton
+        android:id="@+id/btn_prevent_lost_order"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_34"
+        android:text="@string/open"
+        android:textColor="@color/white"
+        app:bg_radius="@dimen/dp_4"
+        app:bga_color="@color/color_03AB66"
+        app:layout_constraintBottom_toBottomOf="@id/iv_prevent_lost_order"
+        app:layout_constraintHorizontal_bias=".91"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_prevent_lost_order"
+        app:layout_constraintWidth_percent=".2"/>
+
+</android.support.constraint.ConstraintLayout>

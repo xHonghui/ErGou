@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 显示加载框 -->
+    <include layout="@layout/item_chat_list_refresh" />
+
+    <!-- 显示时间 -->
+    <!--android:background="@drawable/shape_notification_bg"-->
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:paddingBottom="2dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="2dp"
+        android:text="下午 5点"
+        android:textColor="@color/wechat_time_txt_color"
+        android:textSize="13sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:orientation="horizontal"
+        android:paddingBottom="20dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="10dp">
+
+        <!-- 人物头像 -->
+
+        <ImageView
+            android:id="@+id/ivAvatar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:src="@drawable/default_img" />
+
+        <LinearLayout
+            android:id="@+id/ll_link_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:background="@drawable/bg_shape_link_message"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dp_10"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_10"
+            android:paddingTop="@dimen/dp_10">
+
+            <!-- 昵称，当在群组中则要显示 -->
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="沧晓"
+                android:textColor="#666666"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <!-- 主内容 -->
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_link_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:maxWidth="220dp"
+                    android:text="预返补贴:1.2 直减券:0.00 券后价:24.00"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_15"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/tv_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:maxWidth="170dp"
+                    android:text="【新年蚕丝可爱猪苹果x手机壳6s/7p/8plus防摔iphonexr/max卡通女款】"
+                    android:textColor="@color/gray10"
+                    android:textSize="@dimen/sp_11"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_icon"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/iv_icon" />
+
+                <ImageView
+                    android:id="@+id/iv_icon"
+                    android:layout_width="@dimen/dp_45"
+                    android:layout_height="@dimen/dp_45"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_5"
+                    android:layout_marginTop="@dimen/dp_7"
+                    android:src="@drawable/default_img"
+                    app:layout_constraintLeft_toRightOf="@+id/tv_content"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_link_title" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- android:background="@drawable/bg_nav_btn_back" 设置圆形背景-->
+    <FrameLayout
+        android:id="@+id/fl_back1"
+        android:layout_width="@dimen/dp_32"
+        android:layout_height="@dimen/dp_32"
+        android:layout_marginBottom="@dimen/dp_8"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_8"
+        android:alpha="1.0"
+        android:background="@drawable/bg_nav_btn_back"
+        android:padding="@dimen/dp_9"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_back1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/nav_btn_back_white_for_detail"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </FrameLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_tab_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alpha="0.0"
+        android:background="@color/white"
+        android:paddingBottom="@dimen/dp_8"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_8"
+        android:visibility="visible">
+
+        <!-- android:background="@drawable/bg_nav_btn_back" 设置圆形背景-->
+        <FrameLayout
+            android:id="@+id/fl_back"
+            android:layout_width="@dimen/dp_32"
+            android:layout_height="@dimen/dp_32"
+            android:padding="@dimen/dp_9"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/nav_btn_back_balck_for_detail"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </FrameLayout>
+
+        <!-- tab -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.7">
+
+            <LinearLayout
+                android:id="@+id/ll_baby"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_baby"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="宝贝"
+                    android:textColor="@color/selector_tab_prodcut_detail"
+                    android:textSize="@dimen/sp_16" />
+
+                <View
+                    android:id="@+id/view_baby"
+                    android:layout_width="@dimen/dp_15"
+                    android:layout_height="@dimen/dp_2"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:background="@color/color_main" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="详情"
+                    android:textColor="@color/selector_tab_prodcut_detail"
+                    android:textSize="@dimen/sp_16" />
+
+                <View
+                    android:id="@+id/view_detail"
+                    android:layout_width="@dimen/dp_15"
+                    android:layout_height="@dimen/dp_2"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:background="@color/color_main"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_recommend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="推荐"
+                    android:textColor="@color/selector_tab_prodcut_detail"
+                    android:textSize="@dimen/sp_16" />
+
+                <View
+                    android:id="@+id/view_recommend"
+                    android:layout_width="@dimen/dp_15"
+                    android:layout_height="@dimen/dp_2"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:background="@color/color_main"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>

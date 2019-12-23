@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager_banner"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="h,1:1" />
+
+    <ImageView
+        android:id="@+id/image_view_place"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_374"
+        android:background="@drawable/default_img"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/text_view_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_38"
+        android:layout_marginRight="@dimen/dp_10"
+        android:background="@drawable/banner_shape_indicator_bg"
+        android:paddingBottom="@dimen/dp_2"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_2"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_14"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+    <!-- 小红点 -->
+    <com.laka.ergou.common.util.ui.CommonIndicator
+        android:id="@+id/rl_spot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_6"
+        app:layout_constraintBottom_toBottomOf="@+id/view_pager_banner"
+        app:layout_constraintLeft_toLeftOf="@+id/view_pager_banner"
+        app:layout_constraintRight_toRightOf="@+id/view_pager_banner" />
+
+
+</android.support.constraint.ConstraintLayout>

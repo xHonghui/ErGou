@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/dp_10"
+    android:paddingTop="@dimen/dp_10">
+
+    <com.laka.androidlib.widget.page.MZBannerView
+        android:id="@+id/banner_view_advert"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0"
+        app:canLoop="false"
+        app:indicatorAlign="center"
+        app:root_indicator_padding_bottom="@dimen/dp_8"
+        app:layout_constraintDimensionRatio="w,2:8"
+        app:middle_page_cover="false"
+        app:open_mz_mode="false" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="@dimen/dp_300"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/dp_40"
+        android:layout_marginRight="@dimen/dp_40"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="w,125:75"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_top_bg"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/upload_bg"
+            app:layout_constraintDimensionRatio="w,11:15" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_dialog_update"
+            android:paddingLeft="@dimen/dp_30"
+            android:paddingRight="@dimen/dp_30"
+            app:layout_constraintDimensionRatio="w,104:150"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_top_bg">
+
+            <TextView
+                android:id="@+id/tv_update_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text="更新内容："
+                android:textColor="@color/color_525252"
+                android:textSize="@dimen/sp_13" />
+
+            <!-- 更新描述 -->
+            <ScrollView
+                android:id="@+id/sv_update_txt_alert"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_5"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                app:layout_constraintBottom_toTopOf="@+id/fl_update"
+                app:layout_constraintTop_toBottomOf="@+id/tv_update_title">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_des"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingExtra="@dimen/dp_4"
+                        android:textColor="#292928"
+                        android:textSize="@dimen/sp_13" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_15" />
+                </LinearLayout>
+            </ScrollView>
+
+            <!-- 渐变遮罩层 -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_update_mask"
+                app:layout_constraintBottom_toTopOf="@+id/fl_update" />
+
+            <!-- 立即更新&下载进度条 -->
+            <FrameLayout
+                android:id="@+id/fl_update"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginBottom="@dimen/dp_18"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/bg_update_progress"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
+
+                <com.laka.androidlib.widget.SelectorButton
+                    android:id="@+id/btn_update"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/update_now"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_14"
+                    android:textStyle="bold"
+                    android:visibility="visible"
+                    app:bg_radius="@dimen/dp_6"
+                    app:bga_color="@color/color_main" />
+
+                <ProgressBar
+                    android:id="@+id/pb_update"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginStart="2dp"
+                    android:max="100"
+                    android:progressDrawable="@drawable/shape_progress_update" />
+
+                <TextView
+                    android:id="@+id/tv_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="#333333"
+                    android:textSize="@dimen/sp_14"
+                    android:textStyle="bold" />
+
+            </FrameLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <!-- 根据百分比，计算版本号位置 -->
+        <TextView
+            android:id="@+id/tv_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="v2.0.0"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_13"
+            app:layout_constraintVertical_bias="0.41"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.75"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/ib_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:background="@color/transparent"
+            android:padding="5dp"
+            android:src="@drawable/ic_close"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>

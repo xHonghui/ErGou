@@ -1,0 +1,224 @@
+syntax = "proto3";
+
+//平台类型
+enum PlantformType {
+	PLANTDEFAULT = 0;//未知
+	IOS = 1;        //iOS
+	ANDROID = 2;    //安卓
+}
+
+//aes key请求数据结构
+message Aes_Key_Request
+{
+	PlantformType plantform = 1;	//平台标识: 1 iOS, 2 安卓
+	sint32 version = 2;		//客户端内部数字版本号
+	bytes aes_key = 3;		//数据秘钥
+	string token = 4;		//已登录用户token
+}
+
+//aes key响应数据结构
+message Aes_Key_Response
+{
+	sint32 om_num = 1;		//离线消息数
+}
+
+//分配/连线用户对象请求数据结构
+message Assign_Target_Request
+{
+	enum TargetType {
+		DEFAULT = 0;
+		ROBOT = 1;      //机器人
+		CUSTOMER = 2;   //客服
+	}
+
+	sint64 seq_id = 1;		//同步上下文id
+	TargetType type = 2;		//对象类型
+}
+
+//用户类型
+enum UserType {
+	USERDEFAULT = 0;//未知用户
+	USER = 1;       //普通用户
+	ROBOT = 2;      //机器人用户
+	CUSTOMER = 3;   //客服用户
+}
+
+//分配用户对象响应数据结构
+message Assign_Target_Response
+{
+	sint64 seq_id = 1;		//同步上下文id
+	string user_id = 2;     //用户id
+	UserType user_type = 3; //用户类型
+	string nickname = 4;    //用户昵称
+	string avatar = 5;      //用户图像
+	string gender = 6;      //用户性别
+}
+
+//消息类型
+enum MessageType {
+	MSGDEFAULT = 0;
+	TEXT = 1;           // 文本
+	IMAGE = 3;          // 图片
+	VOICE = 34;         // 语音
+	VERIFYFRIEND = 37;  // 验证好友
+	SHAREFRIEND = 42;   // 明信片
+	VIDEO = 43;         // 视频
+	EMOJI = 47;         // 动图、表情
+	LBS = 48;           // 地理位置
+	RICH = 49;          // 富文本消息
+	CHAT = 50;          // 语音、视频聊天
+	SYSTEM = 10000;     // 系统消息
+	ROOMSYSTEM = 10002; // 群系统消息
+}
+
+//用户发言请求数据结构
+message Send_Message_Request
+{
+    sint64 seq_id = 1;		//同步上下文id
+	string to_id = 2;		//消息接收者id
+	MessageType msg_type = 3;	//消息类型
+	string content = 4;		//消息内容, 不同消息类型，消息内容格式不同
+}
+
+//异常状态的接口请求返回的基本响应结构
+message Base_Response
+{
+    sint64 seq_id = 1;			//同步上下文id
+}
+
+//用户发言响应数据结构
+message Send_Message_Response
+{
+    sint64 seq_id = 1;			//同步上下文id
+	sint64 msg_id = 2;			//消息id
+	sint32 create_time = 3;		//消息创建时间
+}
+
+message Message_Notify
+{
+	sint64 msg_id = 1;			//消息id
+	sint32 status = 2;			//1 已接收消息, 3 已读消息
+}
+
+//关系类型
+enum Relation {
+	RELATION_TYPE_DEFAULT = 0;
+	RELATION_TYPE_FRIEND = 1;
+	RELATION_TYPE_DELETED = 2;
+	RELATION_TYPE_BLACKLISTED = 3;
+}
+
+//获取用户信息请求数据结构
+message User_Info_Request
+{
+	sint64 seq_id = 1;			//同步上下文id
+	string uid = 2;
+}
+
+//获取用户信息响应数据结构
+message User_Info_Response
+{
+	sint64 seq_id = 1;		//同步上下文id
+	string user_id = 2;     //用户id
+	UserType user_type = 3; //用户类型
+	Relation relation = 4;	//关系类型
+	string nickname = 5;    //用户昵称
+	string avatar = 6;      //用户图像
+	string gender = 7;      //用户性别
+}
+
+//离线消息请求数据结构
+message Offline_Message_Request
+{
+	sint64 seq_id = 1;	//同步上下文id
+	sint32 count = 2;	//请求个数
+}
+
+//用户消息
+message IM_Message
+{
+	sint32 create_time = 1;		//消息创建时间
+	string from_id = 2;			//消息来源者Id
+	string to_id = 3;			//消息接收者id
+	sint64 msg_id = 4;			//消息id
+	sint32 msg_type = 5;		//消息类型标识
+	string content = 6;			//消息内容, 不同消息类型，消息内容格式不同，内含消息类型
+	bytes img_buff = 7;			//缩略图，图片和视频有内容
+}
+
+//离线消息响应数据结构
+message Offline_Message_Response
+{
+	sint64 seq_id = 1;		//同步上下文id
+	sint32 count = 2;		//个数
+	repeated IM_Message message = 3;	//离线消息体
+	bool continue = 4;	    //是否还有
+}
+
+
+//广播类型
+enum BroadcastType {
+	BCDEFAULT = 0;
+	TOP = 1;        // 顶端
+	BANNER = 2;     // 横幅
+	BOTTOM = 3;     // 底部
+}
+
+//获取广播信息请求数据结构
+message Broadcast_Message_Request
+{
+	sint64 seq_id = 1;		//同步上下文id
+	BroadcastType type = 2;	//广播数据分类
+	sint32 count = 3;	    //请求个数
+}
+
+//获取广播信息响应数据结构
+message Broadcast_Message_Response
+{
+	sint64 seq_id = 1;		//同步上下文id
+	BroadcastType type = 2;	//广播数据分类
+	sint32 count = 3;		//个数
+	repeated IM_Message message = 4;	//滚动消息体
+}
+
+//广播滚动信息数据结构
+message Broadcast_Message_Notify
+{
+	BroadcastType type = 1;	//广播数据分类
+	IM_Message message = 2;	//滚动消息
+}
+
+message Notify_Keywords_Request
+{
+	sint32 op = 1;
+	sint32 interval = 2;
+	sint32 reload = 3;
+	sint32 id = 4;
+	string badwords = 5;
+	string replaceword = 6;
+}
+
+message Filter_Keywords_Request
+{
+	string content = 1;
+}
+
+message Filter_Keywords_Response
+{
+	string content = 1;
+}
+
+message System_Notice
+{
+	sint32 nid = 1;
+	string title = 2;
+	string content = 3;
+	sint32 time = 4;
+}
+
+message System_Notice_Response
+{
+	sint32 num = 1;
+	repeated System_Notice notice = 2;
+}
+

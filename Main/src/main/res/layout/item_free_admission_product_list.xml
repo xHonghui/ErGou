@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_content"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    android:background="@drawable/bg_shape_shopping_grid_item"
+    android:padding="@dimen/dp_15">
+
+    <ImageView
+        android:id="@+id/iv_product_pic"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/bg_default_placeholder"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_product_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="CLIO珂莱欧遮瑕粉底液持久非气垫bb霜不脱粉雾感妆容"
+        android:textColor="@color/color_303030"
+        android:textSize="@dimen/sp_12"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@id/iv_product_pic"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_product_pic" />
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_store_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_5"
+        app:layout_constraintLeft_toRightOf="@+id/iv_product_pic"
+        app:layout_constraintTop_toBottomOf="@+id/tv_product_name">
+
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_store_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_6"
+            android:textColor="@color/color_aaaaaa"
+            android:textSize="@dimen/sp_11"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/iv_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="ONLY旗舰店" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_yuan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_6"
+        android:paddingBottom="@dimen/dp_3"
+        android:text="¥"
+        android:textColor="@color/color_txt_red"
+        android:textSize="@dimen/sp_10"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/iv_product_pic"
+        app:layout_constraintTop_toBottomOf="@+id/cl_store_info" />
+
+    <TextView
+        android:id="@+id/tv_product_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="200"
+        android:textColor="@color/color_txt_red"
+        android:textSize="@dimen/sp_16"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_yuan"
+        app:layout_constraintLeft_toRightOf="@+id/tv_yuan" />
+
+    <TextView
+        android:id="@+id/tv_product_tmall_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_6"
+        android:layout_marginRight="@dimen/dp_2"
+        android:ellipsize="end"
+        android:lines="1"
+        android:text="原价："
+        android:textColor="@color/color_aaaaaa"
+        android:textSize="@dimen/sp_10"
+        app:layout_constraintBottom_toBottomOf="@id/tv_product_price"
+        app:layout_constraintLeft_toRightOf="@id/tv_product_price"
+        app:layout_constraintTop_toTopOf="@id/tv_product_price" />
+
+    <TextView
+        android:id="@+id/tv_volume"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_6"
+        android:layout_marginRight="@dimen/dp_2"
+        android:ellipsize="end"
+        android:gravity="right"
+        android:lines="1"
+        android:text="已售"
+        android:textColor="@color/color_aaaaaa"
+        android:textSize="@dimen/sp_10"
+        app:layout_constraintBottom_toBottomOf="@id/tv_product_price"
+        app:layout_constraintLeft_toRightOf="@+id/tv_product_tmall_price"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_product_price" />
+
+
+    <!-- 优惠券 -->
+    <FrameLayout
+        android:id="@+id/cl_coupon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_3"
+        android:layout_marginLeft="@dimen/dp_15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/iv_product_pic">
+
+        <!-- 小额优惠券 -->
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_product_min_coupon"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="wrap_content"
+            android:background="@drawable/coupons_s_bg"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/tv_product_min_coupon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_10"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+
+        <!-- 大额优惠券 -->
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_product_max_coupon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/coupons_big_bg"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_product_max_coupon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¥60"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_11"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_product_commission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:background="@drawable/bg_commission_fanli"
+        android:paddingBottom="@dimen/dp_2"
+        android:paddingLeft="@dimen/dp_5"
+        android:paddingRight="@dimen/dp_6"
+        android:paddingTop="@dimen/dp_2"
+        android:text="@string/product_commission"
+        android:textColor="@color/color_fc4d4d"
+        android:textSize="@dimen/sp_10"
+        app:layout_constraintBottom_toBottomOf="@id/cl_coupon"
+        app:layout_constraintLeft_toRightOf="@+id/cl_coupon"
+        app:layout_constraintTop_toTopOf="@id/cl_coupon" />
+
+</android.support.constraint.ConstraintLayout>

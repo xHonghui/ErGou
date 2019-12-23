@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background_gradient">
+    <com.laka.ergou.common.widget.refresh.FrogRefreshRecyclerView
+        android:id="@+id/rv_circle_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_gradient" />
+    <ImageView
+        android:id="@+id/iv_to_top"
+        android:layout_width="@dimen/dp_40"
+        android:visibility="gone"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginBottom="@dimen/dp_50"
+        android:layout_marginRight="@dimen/dp_30"
+        android:background="@drawable/selector_to_top"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+</android.support.constraint.ConstraintLayout>

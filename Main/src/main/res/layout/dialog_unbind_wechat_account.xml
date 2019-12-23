@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal">
+
+    <TextView
+        android:id="@+id/tv_unbind_wx_title"
+        android:layout_width="@dimen/dp_320"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_unbind_wx_top"
+        android:gravity="center"
+        android:paddingTop="@dimen/dp_20"
+        android:text="@string/user_info_unbind_wx"
+        android:textColor="@color/color_303030"
+        android:textSize="@dimen/sp_18"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/iv_delete"
+        android:layout_width="@dimen/dp_22"
+        android:layout_height="@dimen/dp_22"
+        android:layout_marginTop="@dimen/dp_7"
+        android:layout_marginRight="@dimen/dp_10"
+        android:padding="@dimen/dp_3"
+        android:src="@drawable/ic_delete"
+        app:layout_constraintRight_toRightOf="@+id/tv_unbind_wx_title"
+        app:layout_constraintTop_toTopOf="@+id/tv_unbind_wx_title" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/ll_unbind_wx_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_unbind_wx_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_20"
+        android:paddingTop="@dimen/dp_25"
+        android:paddingBottom="@dimen/dp_20"
+        app:layout_constraintLeft_toLeftOf="@id/tv_unbind_wx_title"
+        app:layout_constraintRight_toRightOf="@+id/tv_unbind_wx_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_unbind_wx_title">
+
+        <TextView
+            android:id="@+id/tv_unbind_wx_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/user_info_unbind_wx_hint"
+            android:textColor="@color/color_303030"
+            android:textSize="@dimen/normal_font_size_13"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_unbind_wx_content_detail_first"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_11"
+            android:background="@color/white"
+            android:text="@string/user_info_unbind_wx_hint_detail1"
+            android:textColor="@color/color_656565"
+            android:textSize="@dimen/normal_font_size_small"
+            app:layout_constraintTop_toBottomOf="@+id/tv_unbind_wx_content" />
+
+        <TextView
+            android:id="@+id/tv_unbind_wx_content_detail_second"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_11"
+            android:background="@color/white"
+            android:text="@string/user_info_unbind_wx_hint_detail2"
+            android:textColor="@color/color_656565"
+            android:textSize="@dimen/normal_font_size_small"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/iv_ergou_dog"
+            app:layout_constraintTop_toBottomOf="@+id/tv_unbind_wx_content_detail_first" />
+
+        <TextView
+            android:id="@+id/tv_unbind_wx_content_detail_third"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_11"
+            android:background="@color/white"
+            android:text="@string/user_info_unbind_wx_hint_detail3"
+            android:textColor="@color/color_656565"
+            android:textSize="@dimen/normal_font_size_small"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/iv_ergou_dog"
+            app:layout_constraintTop_toBottomOf="@+id/tv_unbind_wx_content_detail_second" />
+
+        <!-- 二狗狗头 -->
+        <ImageView
+            android:id="@+id/iv_ergou_dog"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_100"
+            android:layout_marginTop="@dimen/dp_4"
+            android:src="@drawable/pop_img_taobao"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_unbind_wx_content_detail_first" />
+
+        <!-- bottom view -->
+        <View
+            android:id="@+id/view_unbind_horizontal_divider"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_0.1"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:background="@color/gray9"
+            app:layout_constraintTop_toBottomOf="@+id/iv_ergou_dog" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_bottom"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp_20"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_unbind_horizontal_divider">
+
+            <com.laka.androidlib.widget.SelectorButton
+                android:id="@+id/tv_unbind_wx_cancel"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_45"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/cancel"
+                android:textColor="@color/color_main"
+                android:textSize="@dimen/sp_15"
+                app:bga_color="@color/white"
+                app:bg_radius="@dimen/dp_5"
+                app:border_color="@color/color_main" />
+
+            <View
+                android:id="@+id/view_unbind_vertical_divider"
+                android:layout_width="@dimen/dp_10"
+                android:layout_height="match_parent"
+                android:background="@color/white" />
+
+            <com.laka.androidlib.widget.SelectorButton
+                android:id="@+id/tv_unbind_wx_confirm"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_45"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/user_info_unbind_wx_count"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_15"
+                app:bg_radius="@dimen/dp_5"
+                app:bga_color="@color/color_main" />
+
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</android.support.constraint.ConstraintLayout>

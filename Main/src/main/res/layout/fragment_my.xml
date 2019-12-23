@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_common_bg"
+    android:overScrollMode="never">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_user_info"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            app:layout_constraintDimensionRatio="w,804:1125">
+
+            <!-- 头部用户数据设置 -->
+            <ImageView
+                android:id="@+id/iv_personal_bg"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0"
+                android:scaleType="fitXY"
+                android:src="@drawable/mine_bg"
+                app:layout_constraintDimensionRatio="w,804:1125"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.laka.androidlib.widget.CircleImageView
+                android:id="@+id/iv_personal_avatar"
+                android:layout_width="@dimen/dp_60"
+                android:layout_height="@dimen/dp_60"
+                android:layout_marginStart="@dimen/dp_26"
+                android:src="@drawable/ic_user_default_avatar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias=".15" />
+
+            <TextView
+                android:id="@+id/tv_personal_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_4"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/user_to_login"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintBottom_toTopOf="@+id/tv_personal_invitation_code"
+                app:layout_constraintHorizontal_weight="1.5"
+                app:layout_constraintLeft_toRightOf="@id/iv_personal_avatar"
+                app:layout_constraintRight_toLeftOf="@+id/iv_personal_agent"
+                app:layout_constraintTop_toTopOf="@id/iv_personal_avatar" />
+
+            <ImageView
+                android:id="@+id/iv_personal_agent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_super_agent"
+                app:layout_constraintBottom_toBottomOf="@id/tv_personal_name"
+                app:layout_constraintHorizontal_weight="2.4"
+                app:layout_constraintLeft_toRightOf="@id/tv_personal_name"
+                app:layout_constraintRight_toLeftOf="@+id/iv_personal_letter"
+                app:layout_constraintTop_toTopOf="@id/tv_personal_name" />
+
+            <ImageView
+                android:id="@+id/iv_personal_letter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_10"
+                android:padding="@dimen/dp_6"
+                android:src="@drawable/selector_letter"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/iv_personal_agent"
+                app:layout_constraintRight_toLeftOf="@+id/iv_personal_setting"
+                app:layout_constraintTop_toTopOf="@id/iv_personal_agent" />
+
+            <ImageView
+                android:id="@+id/iv_personal_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_26"
+                android:padding="@dimen/dp_6"
+                android:src="@drawable/selector_setting"
+                app:layout_constraintBottom_toBottomOf="@id/iv_personal_agent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/iv_personal_agent" />
+
+            <ImageView
+                android:id="@+id/iv_spot"
+                android:layout_width="@dimen/dp_8"
+                android:layout_height="@dimen/dp_8"
+                android:src="@drawable/white_dot"
+                android:visibility="gone"
+                app:layout_constraintRight_toRightOf="@+id/iv_personal_letter"
+                app:layout_constraintTop_toTopOf="@+id/iv_personal_letter" />
+
+            <TextView
+                android:id="@+id/tv_personal_invitation_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user_agent_code"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_13"
+                app:layout_constraintBottom_toBottomOf="@id/iv_personal_avatar"
+                app:layout_constraintLeft_toLeftOf="@id/tv_personal_name"
+                app:layout_constraintTop_toBottomOf="@id/tv_personal_name" />
+
+            <TextView
+                android:id="@+id/tv_personal_copy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_12"
+                android:background="@drawable/selector_personal_copy"
+                android:paddingLeft="@dimen/dp_8"
+                android:paddingTop="@dimen/dp_3"
+                android:paddingRight="@dimen/dp_8"
+                android:paddingBottom="@dimen/dp_3"
+                android:text="@string/copy"
+                android:textColor="@color/white"
+                android:textSize="@dimen/normal_font_size_small"
+                app:layout_constraintBottom_toBottomOf="@id/tv_personal_invitation_code"
+                app:layout_constraintLeft_toRightOf="@id/tv_personal_invitation_code"
+                app:layout_constraintTop_toTopOf="@id/tv_personal_invitation_code" />
+
+            <!-- 以下为可用补贴设置 -->
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_user_commission"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_26"
+                android:layout_marginRight="@dimen/dp_26"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias=".57">
+
+                <TextView
+                    android:id="@+id/tv_commission_valid_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/util_commission_valid"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias=".4" />
+
+                <TextView
+                    android:id="@+id/tv_commission_valid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:text="¥0"
+                    android:textColor="@color/color_ffee41"
+                    android:textSize="@dimen/sp_32"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="@id/tv_commission_valid_hint"
+                    app:layout_constraintTop_toBottomOf="@id/tv_commission_valid_hint" />
+
+                <TextView
+                    android:id="@+id/tv_commission_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:text="@string/util_commission_hint"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_13"
+                    app:layout_constraintLeft_toLeftOf="@id/tv_commission_valid"
+                    app:layout_constraintTop_toBottomOf="@id/tv_commission_valid" />
+
+                <com.laka.androidlib.widget.SelectorButton
+                    android:id="@+id/btn_commission_withdraw"
+                    android:layout_width="@dimen/dp_76"
+                    android:layout_height="@dimen/dp_34"
+                    android:layout_marginRight="@dimen/dp_4"
+                    android:gravity="center"
+                    android:text="@string/commission_withdraw"
+                    android:textColor="@color/color_343434"
+                    android:textStyle="bold"
+                    app:bg_radius="@dimen/dp_6"
+                    app:bga_color="@color/color_ffee41"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_commission_valid"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_commission_valid" />
+            </android.support.constraint.ConstraintLayout>
+
+            <!-- 以下为补贴设置 -->
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_26"
+                android:layout_marginRight="@dimen/dp_26"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias=".91">
+
+                <TextView
+                    android:id="@+id/tv_commission_settlement"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="¥0.00"
+                    android:textColor="#ccfc4d4d"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_commission_settlement_hint"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/view_control_divider" />
+
+                <TextView
+                    android:id="@+id/tv_commission_settlement_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/total_commission"
+                    android:textSize="@dimen/sp_13"
+                    app:layout_constraintLeft_toLeftOf="@id/tv_commission_settlement"
+                    app:layout_constraintRight_toRightOf="@id/tv_commission_settlement"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_commission_settlement" />
+
+                <View
+                    android:id="@+id/view_control_divider"
+                    android:layout_width="@dimen/dp_0.5"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="@dimen/dp_12"
+                    android:layout_marginRight="@dimen/dp_12"
+                    android:background="@color/color_d8d8d8"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_commission_settlement_hint"
+                    app:layout_constraintHeight_percent=".8"
+                    app:layout_constraintLeft_toRightOf="@id/tv_commission_settlement"
+                    app:layout_constraintRight_toLeftOf="@+id/tv_commission_frozen"
+                    app:layout_constraintTop_toTopOf="@id/tv_commission_settlement" />
+
+                <TextView
+                    android:id="@+id/tv_commission_frozen"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="¥0.00"
+                    android:textColor="@color/color_303030"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintLeft_toRightOf="@id/view_control_divider"
+                    app:layout_constraintRight_toLeftOf="@+id/view_control_divider_two"
+                    app:layout_constraintTop_toTopOf="@id/tv_commission_settlement" />
+
+                <TextView
+                    android:id="@+id/tv_commission_frozen_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/withdraw_commission"
+                    android:textSize="@dimen/sp_13"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="@id/tv_commission_frozen"
+                    app:layout_constraintRight_toRightOf="@id/tv_commission_frozen"
+                    app:layout_constraintTop_toBottomOf="@id/tv_commission_frozen" />
+
+                <View
+                    android:id="@+id/view_control_divider_two"
+                    android:layout_width="@dimen/dp_0.5"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="@dimen/dp_12"
+                    android:layout_marginRight="@dimen/dp_12"
+                    android:background="@color/color_d8d8d8"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_commission_frozen_hint"
+                    app:layout_constraintHeight_percent=".8"
+                    app:layout_constraintLeft_toRightOf="@id/tv_commission_frozen"
+                    app:layout_constraintRight_toLeftOf="@+id/tv_commission_withdraw"
+                    app:layout_constraintTop_toTopOf="@id/tv_commission_frozen" />
+
+                <TextView
+                    android:id="@+id/tv_commission_withdraw"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="¥0.00"
+                    android:textColor="@color/color_303030"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintLeft_toRightOf="@id/view_control_divider_two"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_commission_settlement" />
+
+                <TextView
+                    android:id="@+id/tv_commission_withdraw_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:drawableRight="@drawable/ic_commission_question"
+                    android:drawablePadding="@dimen/dp_2"
+                    android:text="@string/frozen_commission"
+                    android:textSize="@dimen/sp_13"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="@id/tv_commission_withdraw"
+                    app:layout_constraintRight_toRightOf="@id/tv_commission_withdraw"
+                    app:layout_constraintTop_toBottomOf="@id/tv_commission_withdraw" />
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_setting_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_user_info" />
+
+        <Button
+            android:id="@+id/btn_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测试"
+            android:visibility="gone" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v4.widget.NestedScrollView>
+

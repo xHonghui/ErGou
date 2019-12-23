@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <View
+        android:id="@+id/img_banner"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+
+    <View
+        android:id="@+id/tv_title1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_16"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_12"
+        android:background="@color/light_transparent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_banner" />
+
+    <View
+        android:id="@+id/tv_title2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_16"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_6"
+        android:background="@color/light_transparent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title1" />
+
+
+    <View
+        android:id="@+id/tv_price"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_16"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@color/light_transparent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title2" />
+
+    <View
+        android:id="@+id/tv_fanli"
+        android:layout_width="@dimen/dp_45"
+        android:layout_height="@dimen/dp_12"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_6"
+        android:background="@color/light_transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_price"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_price" />
+
+
+    <View
+        android:id="@+id/tv_origin_price"
+        android:layout_width="@dimen/dp_45"
+        android:layout_height="@dimen/dp_10"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_15"
+        android:background="@color/light_transparent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_price" />
+
+    <View
+        android:id="@+id/tv_buy"
+        android:layout_width="@dimen/dp_45"
+        android:layout_height="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:background="@color/light_transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_origin_price"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_origin_price" />
+
+    <View
+        android:id="@+id/view_line1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_15"
+        android:background="@color/color_common_bg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_buy" />
+
+
+    <LinearLayout
+        android:id="@+id/ll_skeleton1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/view_line1">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="@dimen/dp_10">
+
+            <View
+                android:id="@+id/iv_icon1"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:background="@color/light_transparent" />
+
+            <View
+                android:id="@+id/tv_store_name1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_14"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:background="@color/light_transparent"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_icon1"
+                app:layout_constraintLeft_toRightOf="@+id/iv_icon1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/iv_icon1" />
+
+            <View
+                android:id="@+id/line1"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="@dimen/dp_16"
+                android:background="@color/color_common_bg"
+                app:layout_constraintTop_toBottomOf="@+id/iv_icon1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/line1">
+
+                <View
+                    android:id="@+id/tv_product_des1"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_12"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/dp_6"
+                    android:layout_marginRight="@dimen/dp_6"
+                    android:layout_weight="1"
+                    android:background="@color/light_transparent" />
+
+                <TextView
+                    android:id="@+id/tv_business_serve1"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_12"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/dp_6"
+                    android:layout_marginRight="@dimen/dp_6"
+                    android:layout_weight="1"
+                    android:background="@color/light_transparent" />
+
+                <TextView
+                    android:id="@+id/tv_logistics_serve1"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_12"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/dp_6"
+                    android:layout_marginRight="@dimen/dp_6"
+                    android:layout_weight="1"
+                    android:background="@color/light_transparent" />
+
+            </LinearLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_skeleton2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/ll_skeleton1">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="@dimen/dp_10">
+
+            <View
+                android:id="@+id/iv_icon2"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:background="@color/light_transparent" />
+
+            <View
+                android:id="@+id/tv_store_name2"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_14"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:background="@color/light_transparent"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_icon2"
+                app:layout_constraintLeft_toRightOf="@+id/iv_icon2"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/iv_icon2" />
+
+            <View
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="@dimen/dp_16"
+                android:background="@color/color_common_bg"
+                app:layout_constraintTop_toBottomOf="@+id/iv_icon2" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/line2">
+
+                <View
+                    android:id="@+id/tv_product_des2"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_12"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/dp_6"
+                    android:layout_marginRight="@dimen/dp_6"
+                    android:layout_weight="1"
+                    android:background="@color/light_transparent" />
+
+                <TextView
+                    android:id="@+id/tv_business_serve2"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_12"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/dp_6"
+                    android:layout_marginRight="@dimen/dp_6"
+                    android:layout_weight="1"
+                    android:background="@color/light_transparent" />
+
+                <TextView
+                    android:id="@+id/tv_logistics_serve2"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_12"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/dp_6"
+                    android:layout_marginRight="@dimen/dp_6"
+                    android:layout_weight="1"
+                    android:background="@color/light_transparent" />
+
+            </LinearLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </LinearLayout>
+
+    <!--bottom button-->
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <include layout="@layout/tmall_h5detail_commission_alert" />
+
+        <include layout="@layout/tmall_h5detail_bottom_coupon" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

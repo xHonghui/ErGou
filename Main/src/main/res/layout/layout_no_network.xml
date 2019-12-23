@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_70"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_no_network"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_no_network" />
+
+        <TextView
+            android:id="@+id/tv_no_net_work"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="@string/no_network_hint"
+            android:textColor="@color/color_black_656565"
+            app:layout_constraintLeft_toLeftOf="@id/iv_no_network"
+            app:layout_constraintRight_toRightOf="@id/iv_no_network"
+            app:layout_constraintTop_toBottomOf="@id/iv_no_network" />
+
+        <com.laka.androidlib.widget.SelectorButton
+            android:id="@+id/btn_no_net_work"
+            android:layout_width="@dimen/dp_150"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="@string/reload"
+            android:textColor="@color/white"
+            app:bg_radius="@dimen/dp_5"
+            app:bga_color="@color/color_main"
+            app:layout_constraintLeft_toLeftOf="@id/tv_no_net_work"
+            app:layout_constraintRight_toRightOf="@id/tv_no_net_work"
+            app:layout_constraintTop_toBottomOf="@id/tv_no_net_work" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>

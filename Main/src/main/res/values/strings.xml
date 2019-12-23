@@ -1,0 +1,263 @@
+<resources>
+    <string name="app_name">二购</string>
+
+    <!-- 通用文案 -->
+    <string name="no_network_hint">网络不给力啊～</string>
+    <string name="no_network_alert">网络不给力，请检查网络设置</string>
+    <string name="no_data_hint">空空如也~</string>
+    <string name="reload">重新加载</string>
+    <string name="copy">复制</string>
+    <string name="commit">提交</string>
+    <string name="ensure">确认</string>
+    <string name="ensure_bind">确认绑定</string>
+    <string name="on_line">在线</string>
+    <string name="off_line">离线</string>
+    <string name="bind_status">已绑定</string>
+    <string name="unbind_status">未绑定</string>
+    <string name="unbind">解绑</string>
+    <string name="bind">绑定</string>
+    <string name="open">去打开</string>
+    <string name="copy_right_reserve">Copyright ©2015-2019 Laka,inc. All Rights Reserved.\n广州啦咔网络科技有限公司</string>
+    <string name="app_version">版本号 %s</string>
+    <string name="money_with_unit">¥%s</string>
+
+    <string name="go_taobao">去手掏</string>
+    <string name="shake">摇一摇</string>
+
+    <!-- 登陆模块文案 -->
+    <string name="txt_phone_login">手机登录</string>
+    <string name="shop_detail_more_item_title">查看宝贝详情</string>
+    <string name="shop_recommend_title">相关推荐</string>
+    <string name="txt_taobao_login">手掏登录</string>
+    <string name="please_enter_your_mobile_phone_number">请输入您的手机号</string>
+    <string name="please_enter_verification_code">请输入验证码</string>
+    <string name="get_verification_code">获取验证码</string>
+
+    <!-- 主页文案定义 -->
+    <string name="module_home">首页</string>
+    <string name="module_user">我的</string>
+    <string name="module_chat">购小二</string>
+    <string name="module_circle">发圈</string>
+    <string name="shopping_search">输入手掏/天喵商品标题或关键词</string>
+
+    <!-- 更新文案 -->
+    <string name="find_new_version">发现新版本%1$s</string>
+    <string name="update_now">立即更新</string>
+    <string name="new_version">已是最新版本</string>
+    <string name="can_not_find_version_name">找不到版本名</string>
+
+    <!-- 分享默认文案 -->
+    <string name="share_default_title">搜索手掏和天喵隐藏直减券，买完还能赚补贴哟！</string>
+    <string name="share_default_content">买东西先来二购搜一搜！帮你省省省，让你赚赚赚！</string>
+    <string name="share_invitation_title">二购-帮你省钱赚钱的购物神器</string>
+    <string name="share_invitation_content">搜索隐藏直减券，买完还能赚补贴哟，提现实时到帐！</string>
+
+    <!-- 搜索页面文案 -->
+    <string name="cancel">取消</string>
+    <string name="search_hot_hint">热门搜索词</string>
+    <string name="search_history_hint">搜索历史</string>
+    <string name="search_history_lately">最近搜索</string>
+    <string name="search_clear_all">全部清空</string>
+    <string name="search_sort_complex">综合</string>
+    <string name="search_sort_count">销量</string>
+    <string name="search_sort_price">价格</string>
+    <string name="search_coupon">仅显示直减券商品</string>
+    <string-array name="search_hot_key_word">
+        <item>茶叶</item>
+        <item>车厘子</item>
+        <item>护肤膏</item>
+        <item>手机壳</item>
+        <item>洗衣液</item>
+        <item>自拍杆</item>
+        <item>男卫衣</item>
+    </string-array>
+
+    <!-- 购物模块文案 -->
+    <string name="product_price">%s</string>
+    <string name="product_origin_price">¥%s</string>
+    <string name="product_sell_count">已售%s</string>
+    <string name="product_commission">补贴¥%s</string>
+    <string name="first_product_commission">首单补贴¥%s</string>
+    <string name="normal_product_commission">补贴¥%s</string>
+    <string-array name="product_default_parent_type">
+        <item>精选</item>
+        <item>母婴</item>
+        <item>食品</item>
+        <item>男装</item>
+        <item>女装</item>
+        <item>个护</item>
+        <item>户外</item>
+        <item>家居</item>
+        <item>数码</item>
+        <item>鞋包</item>
+    </string-array>
+
+    <!-- 用户模块文案定义 -->
+    <string name="user_to_login">点击登录</string>
+    <string name="user_default_name">未设置用户名</string>
+    <string name="util_my_order">我的订单</string>
+    <string name="util_my_commission">我的补贴</string>
+    <string name="util_bind_order">绑定订单</string>
+    <string name="util_my_helper">二购小助手</string>
+    <string name="util_my_tearm_award">战友提成</string>
+    <string name="util_subordinate">我的战友</string>
+    <string name="util_invitation">战队邀请</string>
+    <string name="util_my_robot">我的机器人</string>
+    <string name="util_bind_ali_account">绑定支付宝账号</string>
+    <string name="util_commission_valid">可提现补贴</string>
+    <string name="util_commission_hint">* 每月25日后可提现上月预估结算补贴</string>
+    <string name="commission_withdraw">立即提现</string>
+    <string name="user_agent_code">邀请码：%s</string>
+    <string name="util_invited_friend">战队邀请</string>
+
+    <!--用户模块，用户资料文案定义-->
+    <string name="user_info_avatar">头像</string>
+    <string name="user_info_name">昵称</string>
+    <string name="user_info_gender">性别</string>
+    <string name="user_info_bind_we_chat">绑定微信</string>
+    <string name="user_info_phone">手机号</string>
+    <string name="user_info_bind_alipay">绑定支付宝</string>
+    <string name="user_info_bind_taobao">淘宝授权防丢单</string>
+    <string name="user_info_unbind_wx">解绑微信</string>
+    <string name="user_info_unbind_wx_hint">小主，解绑微信号会有以下影响：</string>
+    <string name="user_info_unbind_wx_hint_detail1">1.补贴提现申请将自动拒绝（可重新提现）；</string>
+    <string name="user_info_unbind_wx_hint_detail2">2.账号的微信订单及订单补贴将解绑后跟随微信号；</string>
+    <string name="user_info_unbind_wx_hint_detail3">3.账号的微信战友及战友提成将解绑后跟随微信号。</string>
+    <string name="user_info_unbind_taobao">解绑淘宝授权</string>
+    <string name="user_info_unbind_taobao_hint">解绑淘宝授权将会有以下影响，请确定是否解绑：</string>
+    <string name="user_info_unbind_taobao_detail">1. 购物返利订单将极大可能丢单（需手动绑定订单）；\n2. 无法直接领券购买返利商品（可去淘宝领券购买）。</string>
+    <string name="user_info_unbind_wx_count">解绑(%s)</string>
+
+    <!-- 用户模块，更换手机号 -->
+    <string name="change_phone_title">更换手机号</string>
+    <string name="change_phone_verify_code_title">验证短信</string>
+    <string name="change_phone_verify_code_hint">短信已经发送至手机 %s</string>
+    <string name="change_phone_error_hint">请输入正确的手机号</string>
+    <string name="change_phone_same_error_hint">输入的手机为当前绑定的手机</string>
+
+    <!-- 用户模块，绑定支付宝账号 -->
+    <string name="bind_ali_account_hint">温馨提示：请填写支付宝真实姓名，才可以正常提现哦！</string>
+    <string name="bind_ali_account_name_hint">请输入真实姓名</string>
+    <string name="bind_ali_account_input_hint">请输入支付宝账号</string>
+
+    <!-- 用户模块，我的机器人文案定义 -->
+    <string name="robot_title_hint">微信扫码领取机器人</string>
+    <string name="robot_identify_qr_code">长按识别二维码</string>
+    <string name="robot_wechat_id_hint">您的专属机器人微信号</string>
+    <string name="robot_question_hint">机器人不加好友？点这里</string>
+    <string name="robot_add_friend">机器人加好友</string>
+    <string name="robot_add_friend_input_hint">在此输入您的微信号</string>
+    <string name="robot_add_friend_hint">* 当您的机器人不通过好友验证时，请输入您的微信号，机器人会主动添加您为好友。</string>
+    <string name="robot_earn_commission">赚取补贴</string>
+    <string name="robot_call_server">通知客服</string>
+    <string name="robot_call_server_toast">已经通知客服人员，请等待处理！</string>
+    <string name="robot_copy_id">复制微信号</string>
+    <string name="robot_copy_toast">复制微信号成功！</string>
+
+    <!-- 用户模块，绑定订单 -->
+    <string name="bind_order_hint">手掏订单付款成功后，如果2分种内没有收到返利补贴提示，请手动绑定订单，订单编号在购买的商品详细页能查看到。</string>
+    <string name="bind_order_input_hint">请输入需要绑定的订单号</string>
+    <string name="bind_order_error_hint">系统没有查询到相应的订单号，只有通过反利链接或返利口令购买的商品才会返利。</string>
+
+    <string name="util_my_shop_cart">购物车</string>
+    <string name="util_my_setting">设置</string>
+    <string name="clear_cache">清理缓存</string>
+    <string name="about_us">关于我们</string>
+    <string name="about_private">隐私政策</string>
+    <string name="about_laka">关于啦咔</string>
+
+    <!-- 用户模块，我的补贴 -->
+    <string name="enable_commission">可用补贴</string>
+    <string name="frozen_commission">已提现补贴</string>
+    <string name="total_commission">本月结算补贴</string>
+    <string name="withdraw_commission">上月结算补贴</string>
+
+    <!-- 用户模块，补贴规则 -->
+    <string name="rule_txt1">1、订单付款后获得的返利为待结补贴，在订单完成结算后将自动变成可用补贴；</string>
+    <string name="rule_txt2">2、提现申请会在3个工作日内审核，审核通过后提现金额将自动转账到绑定的支付宝账户中。</string>
+    <string name="cash_withdrawal_fail">提现补贴失败</string>
+    <string name="enable_commission_value">可用补贴</string>
+    <string name="apply_success">申请提现成功，请耐心等待审核！</string>
+    <string name="search_dialog_second_title">您是否搜索以下商品</string>
+    <string name="search_dialog_first_title">智能搜索直减券</string>
+
+    <!-- 购小二模块 -->
+    <string name="chat_lock_title_hint">小主，购小二很高兴见到您！</string>
+    <string name="chat_unlock_title_hint">主人，已识别到您要搜以下内容</string>
+    <string name="chat_lock_message_hint">按以下操作就可以解锁您的专属机器人购小二哦〜</string>
+    <string name="chat_lock_tutorial_taobao">1.打开手掏</string>
+    <string name="chat_lock_tutorial_share">2.点击分享</string>
+    <string name="chat_lock_tutorial_link">3.复制链接</string>
+    <string name="chat_lock_tutorial_ergou">4.回到这里</string>
+
+    <!-- IM-UI文案 -->
+    <string name="please_to_talk">按住 说话</string>
+    <string name="send">发送</string>
+    <string name="no_support_msg_type">不支持的消息类型</string>
+    <string name="send_to_friend">发送给朋友</string>
+    <string name="recall">撤回</string>
+    <string name="delete">删除</string>
+
+    <!-- IM-UI提示文案 -->
+    <string name="no_online_alert">语音智能导购功能即将上线，敬请期待！</string>
+
+    <!-- 购小二模块，Socket相关提示 -->
+    <string name="chat_retry_hint">%s秒后再尝试连接</string>
+    <string name="commisson_already_withdraw">已提现补贴</string>
+    <string name="my_lower_levels">我的战队</string>
+    <string name="team_award">战队提成</string>
+    <string name="app_lower_levels">APP战队</string>
+    <string name="app_team_award">APP提成</string>
+    <string name="wechat_team_award">微信提成</string>
+    <string name="wechat_lower_levels">微信战队</string>
+    <string name="my_order">我的订单</string>
+    <string name="app_order">APP订单（0）</string>
+    <string name="wechat_order">微信订单（0）</string>
+    <string name="message_center">消息</string>
+    <string name="commission_message">补贴消息</string>
+    <string name="other_message">其他消息</string>
+    <string name="dont_invitation_self">不可以邀请自己的哦~</string>
+    <string name="please_input_correct_verification_code_alert">请输入正确的邀请码</string>
+    <string name="image_enable_scan">无法识别二维码，请确保图片清晰度</string>
+    <string name="scan_current_invitation_code">请扫描正确的邀请二维码</string>
+    <string name="commission_introd_order">补贴介绍-订单结算时结算</string>
+    <string name="commission_introd_month">补贴介绍-每个月固定时间结算</string>
+
+    <!-- 无数据统一展示文案 -->
+    <string name="no_order_data_hint">暂无订单</string>
+    <string name="no_commission_data_hint">暂无提现记录</string>
+    <string name="no_subordinate_data_hint">暂无战友</string>
+    <string name="no_commission_msg_hint">暂无补贴消息</string>
+    <string name="no_other_msg_hint">暂无其他消息</string>
+    <string name="no_search_result_hint">暂无搜索结果</string>
+    <string name="no_withdraw_data_hint">暂无提现记录</string>
+    <string name="title_invitation_record">邀请记录</string>
+    <string name="invitation_not_active">未激活（0）</string>
+    <string name="invitation_actived">已激活（0）</string>
+    <string name="alert_no_wechat_msg">亲，请先安装微信客户端再进行此操作哦！</string>
+    <string name="invitation_record">邀请记录</string>
+    <string name="video_course_txt">新手视频教程</string>
+    <string name="tmall_search_coupon_fail">查找补贴优惠失败</string>
+    <string name="hello_ergou">你好，\n欢迎登录二购</string>
+    <string name="search_shop_coupon">正在为您查找补贴优惠</string>
+    <string name="my_comrade_arms_lower_title">战友</string>
+    <string name="share_title_copy_alert">已自动复制商品标题，记得在微信粘贴哟~</string>
+
+    <!--天猫-->
+
+    <!-- 客服文案 -->
+    <string name="permission_camera">摄像头</string>
+    <string name="permission_storage">文件</string>
+    <string name="permission_accounts">信息</string>
+    <string name="permission_phone">状态</string>
+    <string name="permission_location">定位</string>
+    <string name="permission_audio">录音</string>
+    <string name="str_media_permission">请去\"设置\"中开启本应用的图片媒体访问权限</string>
+    <string name="str_camra_permission">请去\"设置\"中开启本应用的相机权限</string>
+    <string name="subordinate_commission">战友提成</string>
+    <string name="other_reward">其他奖励</string>
+    <string name="share_poster">分享海报</string>
+    <string name="share_app">分享APP</string>
+
+
+</resources>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/dp_8"
+    android:paddingLeft="@dimen/dp_20"
+    android:paddingRight="@dimen/dp_20"
+    android:paddingTop="@dimen/dp_18">
+
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        app:riv_corner_radius="@dimen/dp_5"
+        android:id="@+id/iv_icon"
+        android:layout_width="@dimen/dp_70"
+        android:layout_height="@dimen/dp_70"
+        android:src="@drawable/order_bg_good" />
+
+    <TextView
+        android:id="@+id/tv_shop_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_4"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:gravity="left"
+        android:maxLines="2"
+        android:textColor="@color/color_black_303030"
+        android:textSize="@dimen/sp_12"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/iv_icon"
+        app:layout_constraintRight_toLeftOf="@+id/tv_order_price"
+        app:layout_constraintTop_toTopOf="@+id/iv_icon" />
+
+
+    <TextView
+        android:id="@+id/tv_order_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="right"
+        android:maxLines="1"
+        android:textColor="@color/color_525252"
+        android:textSize="@dimen/sp_12"
+        android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_shop_title" />
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_3"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:gravity="right"
+        android:maxLines="1"
+        android:textColor="@color/color_aaaaaa"
+        android:textSize="@dimen/sp_11"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_icon"
+        app:layout_constraintLeft_toRightOf="@+id/iv_icon" />
+
+    <TextView
+        android:id="@+id/tv_shop_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:maxLines="1"
+        android:textColor="@color/color_aaaaaa"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_order_price" />
+
+    <TextView
+        android:id="@+id/tv_commission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:background="@drawable/shape_red_hollow_rect"
+        android:ellipsize="end"
+        android:gravity="right"
+        android:maxLines="1"
+        android:paddingBottom="@dimen/dp_2"
+        android:paddingLeft="@dimen/dp_4"
+        android:paddingRight="@dimen/dp_4"
+        android:paddingTop="@dimen/dp_2"
+        android:textColor="@color/color_aaaaaa"
+        android:textSize="@dimen/sp_10"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_icon"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@color/color_divider"
+        app:layout_constraintTop_toBottomOf="@+id/iv_icon" />
+
+
+    <TextView
+        android:id="@+id/tv_order_no"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_12"
+        android:layout_weight="1"
+        android:maxLines="1"
+        android:textColor="@color/color_aaaaaa"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintTop_toBottomOf="@+id/view_line" />
+
+    <com.laka.androidlib.widget.SelectorButton
+        android:id="@+id/sb_copy"
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:gravity="center"
+        android:paddingBottom="@dimen/dp_3"
+        android:paddingTop="@dimen/dp_3"
+        android:text="复制"
+        android:textColor="@color/color_aaaaaa"
+        app:bg_radius="@dimen/dp_50"
+        app:bga_color="@color/white"
+        app:border_color="@color/color_aaaaaa"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_order_no"
+        app:layout_constraintLeft_toRightOf="@+id/tv_order_no"
+        app:layout_constraintTop_toTopOf="@+id/tv_order_no" />
+
+    <TextView
+        android:id="@+id/tv_order_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_aaaaaa"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBottom_toBottomOf="@+id/sb_copy"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/sb_copy" />
+
+</android.support.constraint.ConstraintLayout>

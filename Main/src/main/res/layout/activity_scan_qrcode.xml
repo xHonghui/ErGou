@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <cn.bingoogolapple.qrcode.zbar.ZBarView
+        android:id="@+id/qr_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:qrcv_animTime="1000"
+        app:qrcv_borderColor="@color/white"
+        app:qrcv_borderSize="0dp"
+        app:qrcv_cornerColor="@color/color_main"
+        app:qrcv_cornerLength="@dimen/dp_20"
+        app:qrcv_cornerSize="@dimen/dp_2"
+        app:qrcv_isShowDefaultScanLineDrawable="true"
+        app:qrcv_isTipTextBelowRect="true"
+        app:qrcv_maskColor="#99000000"
+        app:qrcv_qrCodeTipText="扫一扫海报二维码"
+        app:qrcv_rectWidth="@dimen/dp_220"
+        app:qrcv_scanLineColor="@color/color_main"
+        app:qrcv_tipTextColor="@color/white"
+        app:qrcv_tipTextSize="@dimen/sp_14"
+        app:qrcv_topOffset="@dimen/dp_150" />
+
+    <FrameLayout
+        android:id="@+id/fl_back"
+        android:layout_width="@dimen/dp_32"
+        android:layout_height="@dimen/dp_32"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/bg_nav_btn_back"
+        android:padding="@dimen/dp_9"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back_white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/iv_torch"
+        android:layout_width="@dimen/dp_32"
+        android:layout_height="@dimen/dp_32"
+        android:layout_marginRight="@dimen/dp_10"
+        android:src="@drawable/selector_ercode_btn_flashlight"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fl_back" />
+
+    <ImageView
+        android:id="@+id/iv_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_150"
+        android:src="@drawable/ercode_bg_outline"
+        android:visibility="invisible"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--android:background="@drawable/bg_shape_scan_btn"-->
+    <com.laka.androidlib.widget.SelectorButton
+        android:id="@+id/btn_check_img"
+        android:layout_width="@dimen/dp_180"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_75"
+        android:gravity="center"
+        android:text="选择相册中的海报"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_16"
+        app:bg_radius="@dimen/dp_50"
+        app:bga_color="@color/color_333030"
+        app:border_color="@color/color_737172"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_center" />
+
+
+</android.support.constraint.ConstraintLayout>

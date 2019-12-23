@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_common_bg">
+
+    <!-- bg -->
+    <com.laka.ergou.mvp.shopping.center.weight.GradualChangeBgView
+        android:id="@+id/view_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- 滑动列表 -->
+    <com.laka.ergou.common.widget.refresh.ErGouHomeRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_root_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- 内容区 -->
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!-- 协调者布局 -->
+                <android.support.design.widget.CoordinatorLayout
+                    android:id="@+id/cl_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible">
+
+                    <!-- 头部控制栏 -->
+                    <!-- elevation = 0dp 设置控件的海拔，5.0 材料设置的特性 -->
+                    <android.support.design.widget.AppBarLayout
+                        android:id="@+id/app_bar_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent"
+                        android:fitsSystemWindows="true"
+                        android:orientation="vertical"
+                        app:elevation="0dp">
+
+                        <!-- 可滑动部分 -->
+                        <android.support.design.widget.CollapsingToolbarLayout
+                            android:id="@+id/collapsing_toolbar_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fitsSystemWindows="true"
+                            app:layout_scrollFlags="scroll">
+                            <!--  app:layout_scrollFlags="scroll|enterAlwaysCollapsed|exitUntilCollapsed" -->
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_collapseMode="pin">
+
+                                <!-- banner -->
+                                <View
+                                    android:id="@+id/view_line0"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/dp_3" />
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/cl_banner"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <com.laka.androidlib.widget.page.MZBannerView
+                                        android:id="@+id/banner_view"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/dp_0"
+                                        app:canLoop="true"
+                                        app:indicatorAlign="center"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintDimensionRatio="w,70:188"
+                                        app:layout_constraintLeft_toLeftOf="parent"
+                                        app:layout_constraintRight_toRightOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:middle_page_cover="true"
+                                        app:mz_mode_page_align="left"
+                                        app:open_mz_mode="true" />
+
+                                </android.support.constraint.ConstraintLayout>
+
+                                <!-- video course -->
+                                <View
+                                    android:id="@+id/view_line1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/dp_10" />
+
+                                <include layout="@layout/layout_home_video_course_for_newuser" />
+
+                                <!-- topic -->
+                                <View
+                                    android:id="@+id/view_line2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/dp_10" />
+
+                                <include layout="@layout/layout_home_topic_list" />
+
+                                <!-- activity -->
+                                <View
+                                    android:id="@+id/view_line3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/dp_10" />
+
+                                <include layout="@layout/layout_home_activity_region" />
+
+                                <View
+                                    android:id="@+id/view_line4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/dp_10" />
+
+                            </LinearLayout>
+
+                        </android.support.design.widget.CollapsingToolbarLayout>
+
+                        <!-- 固定部分 -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp_44">
+
+                                <net.lucode.hackware.magicindicator.MagicIndicator
+                                    android:id="@+id/magic_indicator"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:paddingBottom="3dp" />
+
+                                <net.lucode.hackware.magicindicator.MagicIndicator
+                                    android:id="@+id/magic_indicator_collapsed"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/color_655ADD"
+                                    android:paddingBottom="3dp"
+                                    android:visibility="gone" />
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_tab"
+                                android:layout_width="match_parent"
+                                android:layout_height="45dp">
+
+                                <LinearLayout
+                                    android:id="@+id/ll_synthesis"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/bg_home_tab_left"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:id="@+id/tv_synthesis"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:text="综合"
+                                        android:textColor="@color/color_main"
+                                        android:textStyle="bold" />
+
+                                    <ImageView
+                                        android:id="@+id/iv_synthesis"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="4dp"
+                                        android:src="@drawable/default_btn_sort_s1" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@color/white"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:id="@+id/tv_time"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:text="最新入库"
+                                        android:textColor="@color/gray_88"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/ll_sales"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@color/white"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:id="@+id/tv_sales"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:text="销量"
+                                        android:textColor="@color/gray_88"
+                                        android:textStyle="bold" />
+
+                                    <ImageView
+                                        android:id="@+id/iv_sales"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="4dp"
+                                        android:src="@drawable/default_btn_sort_n2" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/ll_price"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/bg_home_tab_right"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:id="@+id/tv_price"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:text="价格"
+                                        android:textColor="@color/gray_88"
+                                        android:textStyle="bold" />
+
+                                    <ImageView
+                                        android:id="@+id/iv_price"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="4dp"
+                                        android:src="@drawable/default_btn_sort_n2" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </android.support.design.widget.AppBarLayout>
+
+                    <!--页面主体内容 -->
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                        <android.support.v4.view.ViewPager
+                            android:id="@+id/vp_shopping_list"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                        <FrameLayout
+                            android:id="@+id/ll_select"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <View
+                                android:id="@+id/v_shadow"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#66888888" />
+
+                            <include layout="@layout/home_list_data_menu" />
+
+                        </FrameLayout>
+                    </FrameLayout>
+
+                </android.support.design.widget.CoordinatorLayout>
+
+                <!--无网络页面 -->
+                <include
+                    android:id="@+id/layout_no_network"
+                    layout="@layout/layout_no_network"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.constraint.ConstraintLayout>
+    </com.laka.ergou.common.widget.refresh.ErGouHomeRefreshLayout>
+
+    <!-- title -->
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/title_bar_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_home_title_bar" />
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_home_logo"
+                android:layout_width="@dimen/dp_35"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_marginRight="@dimen/dp_12"
+                android:src="@drawable/home_logo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/cl_shopping_keyword"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_message"
+                android:layout_width="31dp"
+                android:layout_height="32dp"
+                android:layout_marginRight="@dimen/dp_8"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/iv_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_3"
+                    android:src="@drawable/selector_letter"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_spot"
+                    android:layout_width="@dimen/dp_10"
+                    android:layout_height="@dimen/dp_10"
+                    android:background="@drawable/white_dot"
+                    android:visibility="gone"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/iv_customer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_5"
+                android:src="@drawable/selector_default_btn_service"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/cl_message"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_shopping_keyword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_10"
+                android:background="@drawable/white_corner_round_bg"
+                android:clickable="true"
+                android:focusableInTouchMode="true"
+                android:paddingBottom="@dimen/dp_8"
+                android:paddingLeft="@dimen/dp_12"
+                android:paddingRight="@dimen/dp_12"
+                android:paddingTop="@dimen/dp_8"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/iv_home_logo"
+                app:layout_constraintRight_toLeftOf="@+id/iv_customer"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/iv_shopping_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_search"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_shopping_search_key_word"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_6"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@string/shopping_search"
+                    android:textColor="@color/color_aaaaaa"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/iv_shopping_search"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/iv_shopping_switch_type"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@drawable/btn_list_normal"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/cl_shopping_keyword"
+                app:layout_constraintLeft_toRightOf="@id/cl_shopping_keyword"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/cl_shopping_keyword" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>

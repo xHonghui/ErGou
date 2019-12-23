@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.laka.ergou">
+
+    <!-- 阿里云OSS 权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- 用于开启 debug 版本的应用在 6.0 系统上的层叠窗口权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <!-- 极光认证权限 -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!--极光推送-->
+    <permission
+        android:name="com.laka.ergou.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="com.laka.ergou.permission.JPUSH_MESSAGE" />
+
+    <application
+        android:name=".mvp.base.MainApplication"
+        android:allowBackup="true"
+        android:authorities="com.laka.ergou.fileprovider"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        tools:replace="allowBackup">
+
+        <!-- autoLayout 配置 -->
+        <meta-data
+            android:name="design_width"
+            android:value="720" />
+        <meta-data
+            android:name="design_height"
+            android:value="1280" />
+
+        <!-- FileProvider分享类 -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.laka.ergou.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- 友盟统计 -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5c3440d3f1f556f326001706" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="laka" />
+
+        <!-- 异形屏幕适配 -->
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.3" />
+
+        <!-- 登录授权模块 -->
+        <activity
+            android:name=".mvp.login.view.activity.PhoneLoginActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".mvp.login.view.activity.TaobaoAuthorActivity"
+            android:theme="@style/BaseAppTheme" />
+        <activity
+            android:name=".mvp.login.view.activity.LoginActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".mvp.login.view.activity.BindInvitationCodeActivity"
+            android:theme="@style/BaseAppTheme"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".mvp.login.view.activity.PhoneInputActivity"
+            android:theme="@style/BaseAppTheme" />
+        <activity
+            android:name=".mvp.login.view.activity.VerificationCodeInputActivity"
+            android:theme="@style/BaseAppTheme"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".mvp.login.view.activity.ScanQRCodeActivity"
+            android:theme="@style/BaseAppTheme" />
+
+        <!-- 启动页 -->
+        <activity
+            android:name=".mvp.launch.view.activity.LaunchActivity"
+            android:theme="@style/LaunchTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".mvp.advert.activity.AdvertDetailX5WebActivity" />
+        <activity
+            android:name=".mvp.test.view.TestActivity"
+            android:theme="@style/LaunchTheme">
+
+        </activity>
+        <activity
+            android:name=".mvp.main.view.activity.X5WebActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:hardwareAccelerated="true"></activity>
+
+        <!-- 主页模块 -->
+        <!--android:launchMode="singleTask"-->
+        <activity
+            android:name=".mvp.main.view.activity.HomeActivity"
+            android:theme="@style/BaseAppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <!-- 配置淘宝返回路径 -->
+                <data
+                    android:host="m.laka.com"
+                    android:pathPrefix="/index.html"
+                    android:scheme="tbopen" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".mvp.main.view.activity.WebActivity" />
+        <activity android:name=".mvp.shopping.search.view.activity.SearchHomeActivity" />
+
+        <!-- 购物模块 -->
+        <activity android:name="com.laka.ergou.mvp.shopping.center.view.activity.FavoriteProductListActivity" />
+        <activity
+            android:name=".mvp.shopping.center.view.activity.ShoppingSpecialActivity"
+            android:theme="@style/BaseAppTheme" />
+        <activity
+            android:name=".mvp.shop.view.activity.ShopDetailActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 购小二模块 -->
+        <activity
+            android:name=".mvp.chat.view.activity.ChatActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAppTheme"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- 用户模块 -->
+        <activity android:name=".mvp.user.view.activity.MyCommissionActivity" />
+        <activity android:name=".mvp.user.view.activity.BindOrderActivity" />
+        <activity android:name=".mvp.user.view.activity.MyRobotActivity" />
+        <activity android:name=".mvp.user.view.activity.AddRobotActivity" />
+        <activity android:name=".mvp.user.view.activity.EarnCommissionActivity" />
+        <activity android:name=".mvp.user.view.activity.InvitationWebActivity" />
+        <activity android:name=".mvp.user.view.activity.InvitationPlaybillActivity">
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN" />-->
+            <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        </activity>
+        <activity android:name=".mvp.user.view.activity.BindUnionCodeWebActivity" />
+        <activity android:name=".mvp.shop.view.activity.TaoBaoAuthorFailActivity" />
+        <activity android:name=".mvp.shop.view.activity.TaoBaoAuthorSuccessActivity" />
+
+        <!-- 我的补贴 -->
+        <activity android:name=".mvp.commission.view.activity.CommissionActivity" />
+        <activity android:name=".mvp.commission.view.activity.CommissionDetailActivity" />
+        <!-- 我的订单 -->
+        <activity
+            android:name=".mvp.order.view.activity.MyAllOrderActivity"
+            android:theme="@style/BaseAppTheme" />
+        <!-- 邀请记录 -->
+        <activity android:name=".mvp.invitationrecord.view.activity.InvitationRecordActivity" />
+
+        <!-- 用户模块，用户资料设置 -->
+        <activity android:name=".mvp.user.view.activity.UserInfoActivity" />
+        <activity android:name=".mvp.user.view.activity.UserGenderEditActivity" />
+        <activity android:name=".mvp.user.view.activity.UserNickEditActivity" />
+        <activity android:name=".mvp.user.view.activity.ChangePhoneActivity" />
+        <activity android:name=".mvp.user.view.activity.VerifyCodeActivity" />
+        <activity android:name=".mvp.user.view.activity.BindAliAccountActivity" />
+        <activity android:name=".mvp.user.view.activity.SettingActivity" />
+        <activity android:name=".mvp.user.view.activity.AboutUsActivity" />
+        <activity android:name=".mvp.user.view.activity.RewardActivity" />
+        <!-- 我的战友 -->
+        <activity
+            android:name=".mvp.armsteam.view.activity.MyArmsLevelsActivity"
+            android:theme="@style/BaseAppTheme" />
+        <!-- 消息中心 -->
+        <activity android:name=".mvp.message.view.activity.MessageCenterActivity" />
+        <!-- 天猫超市、天猫国际、聚划算等页面 -->
+        <activity android:name=".mvp.tmall.view.activity.TmallWebActivity" />
+        <!-- 微信分享activity -->
+        <activity android:name=".mvp.share.view.activity.ShopShareActivity" />
+        <activity android:name=".mvp.share.view.activity.SeeShareImageActivity" />
+        <activity android:name=".mvp.share.view.activity.SeeBigImageActivity" />
+        <activity android:name=".mvp.armsteam.view.activity.MyComradeArmsLowerActivity" />
+        <activity android:name=".mvp.freedamission.view.activity.FreeAdmissionActivity" />
+        <activity android:name=".mvp.activityproduct.view.activity.ActivityProductActivity" />
+        <activity android:name=".mvp.customer.view.activity.CustomerActivity" />
+        <activity android:name=".mvp.shop.view.activity.ReceiveCouponActivity" />
+
+
+        <!-- since 2.0.0 optional 可选项，使用一键登录功能必须添加  -->
+        <!-- since 2.1.1 optional 可选项，通过screenOrientation设置授权页面横竖屏展示  -->
+        <activity
+            android:name="com.cmic.sso.sdk.activity.OAuthActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="unspecified"/>
+        <!-- since 2.0.0 optional 可选项，使用一键登录功能必须添加  -->
+        <!-- since 2.1.1 optional 可选项，通过screenOrientation设置授权页面横竖屏展示  -->
+        <activity
+            android:name="com.cmic.sso.sdk.activity.LoginAuthActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Holo.NoActionBar"/>
+        <!-- since 2.0.0 optional 可选项，使用一键登录功能必须添加  -->
+        <!-- since 2.1.1 optional 可选项，通过screenOrientation设置授权页面横竖屏展示  -->
+        <activity
+            android:name="cn.jiguang.verifysdk.CtLoginActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Holo.NoActionBar"/>
+
+
+        <!-- 微信分享回调 -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:taskAffinity="com.laka.ergou" />
+        <activity android:name=".mvp.advert.activity.AdvertDetailWebActivity" />
+        <activity android:name=".mvp.teamaward.view.activity.TeamAwardActivity" />
+        <activity android:name=".mvp.circle.view.activity.CircleHelperActivity" />
+
+        <!-- 极光推送 -->
+        <receiver
+            android:name="com.laka.ergou.mvp.receiver.JPushReceiver"
+            android:enabled="true"
+            android:exported="false"
+            tools:node="replace">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
+                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+                <action android:name="cn.jpush.android.intent.CONNECTION" />
+
+                <category android:name="com.laka.ergou" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

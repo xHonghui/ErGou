@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+ Copyright (C) 2008 ZXing authors
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ -->
+<resources>
+    <item name="my_webview" type="id" />
+    <item name="chat_list_image_view_width" type="id" />
+    <item name="chat_list_image_view_height" type="id" />
+
+    <item name="image_orientation" type="id" />
+    <item name="state_origin" type="id" />
+    <item name="state_default" type="id" />
+    <item name="state_current" type="id" />
+    <item name="state_thumb" type="id" />
+    <item name="state_temp" type="id" />
+    <item name="state_exit" type="id" />
+    <item name="state_touch_drag" type="id" />
+    <item name="state_touch_scale" type="id" />
+    <item name="view_image_watcher" type="id" />
+    <item name="view_decoration" type="id"/>
+</resources>

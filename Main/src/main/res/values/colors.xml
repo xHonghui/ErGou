@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/black</color>
+    <color name="colorPrimaryDark">@color/black</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- 项目主颜色 -->
+    <!--<color name="color_main">#fffc4d4d</color>-->
+    <color name="color_main">#7966e3</color>
+    <color name="color_theme_yellow">#ffa241</color>
+    <color name="color_yellow">#ffa241</color>
+
+    <!-- 主题按钮颜色 -->
+    <color name="color_common_btn_main">#fa5e5e</color>
+
+    <!-- 主题文字提示颜色 -->
+    <color name="color_common_text_main">#fa5e5e</color>
+
+    <!-- 通用文字提示背景颜色 -->
+    <color name="bg_common_text_hint">#fff0d2</color>
+
+    <!-- 通用文字提示颜色 -->
+    <color name="common_text_hint">#f68108</color>
+
+    <!-- 文字颜色  -->
+    <color name="color_font">#ff666666</color>
+    <color name="color_aaaaaa">#aaaaaa</color>
+    <color name="white">#ffffff</color>
+    <color name="gray_bg">#f9f8f8</color>
+    <color name="key_font_color">#f85d5e</color>
+    <color name="agriworld_color_green">#01b882</color>
+
+
+    <!-- 其他辅助颜色 -->
+    <color name="color_e0e0e0">#e0e0e0</color>
+    <!--<color name="color_divider">#cfcfcf</color>-->
+    <color name="color_divider">#d9d9d9</color>
+    <color name="color_05a585">#05a585</color>
+
+    <!-- 登陆相关颜色 -->
+    <color name="login_btn_color">#fd7918</color>
+    <color name="bg_transparent_black">#55000000</color>
+    <color name="color_bg_product_detail_share">#fda141</color>
+    <color name="color_bg_product_detail_coupons">#f85d5e</color>
+    <color name="color_gray_bg">#ededed</color>
+    <color name="color_txt_black">#121212</color>
+    <color name="color_img_black_bg">#e2e2e2</color>
+
+    <color name="color_black_05a585">#05a585</color>
+    <color name="color_black_656565">#656565</color>
+    <color name="color_black_33000000">#33000000</color>
+    <color name="color_red_fa5e5e">#fa5e5e</color>
+    <color name="color_black_303030">#303030</color>
+
+    <!-- 搜索页面颜色 -->
+    <color name="color_search_coupon">#656565</color>
+
+    <!-- 机器人在线状态颜色 -->
+    <color name="color_on_line">#00cb75</color>
+    <color name="color_on_line_react">#ceece3</color>
+    <color name="color_on_line_text">#77c5ae</color>
+    <color name="color_off_line">#fd5953</color>
+    <color name="color_off_line_rect">#6ffa5e5e</color>
+    <color name="color_off_line_text">#fa5e5e</color>
+    <!-- 灰色 -->
+    <color name="gray0">#45C01A</color>
+    <color name="gray1">#7e7e7e</color>
+    <color name="gray2">#969696</color>
+    <color name="gray3">#c8969696</color>
+    <color name="gray4">#F5F5F5</color>
+    <color name="gray5">#EBEBEB</color>
+    <color name="gray6">#FBFBFB</color>
+    <color name="gray7">#999999</color>
+    <color name="gray8">#D9D9D9</color>
+    <color name="gray9">#DBDFE0</color>
+    <color name="gray10">#888888</color>
+    <color name="gray11">#f9f8f8</color>
+    <color name="color_80000000">#80000000</color>
+    <!-- 绿色 -->
+    <color name="green0">#45C01A</color>
+    <color name="green1">#45C01A</color>
+    <color name="green2">#A3DEA3</color>
+    <color name="green3">#1AAD19</color>
+    <!--微信聊天界面配色-->
+    <color name="wechat_chat_bg">#EFEDEE</color>
+    <color name="wechat_operation_bar_bg">#F7F7F7</color>
+    <color name="wechat_time_txt_color">#A2A2A3</color>
+
+    <!-- 用户资料颜色 -->
+    <color name="color_info_copy_default">#66ffffff</color>
+    <color name="color_info_copy_pressed">#97ffffff</color>
+    <color name="color_info_with_draw_normal">#ffd741</color>
+    <color name="color_info_with_draw_pressed">#fad95b</color>
+    <color name="color_343434">#343434</color>
+    <color name="color_303030">#303030</color>
+    <color name="color_d8d8d8">#d8d8d8</color>
+    <color name="bg_yellow">#fff0d2</color>
+    <color name="color_03AB66">#03AB66</color>
+    <color name="color_03ab66">#03ab66</color>
+
+    <!-- v2.0.0切换主题色 -->
+    <color name="color_ffa241">#ffa241</color>
+    <color name="color_txt_red">#f84272</color>
+    <color name="color_fc4d4d">#fc4d4d</color>
+    <color name="color_ffebeb">#ffebeb</color>
+    <color name="color_dbd7f1">#dbd7f1</color>
+    <color name="color_929292">#929292</color>
+    <color name="color_c3c3c3">#c3c3c3</color>
+    <color name="color_fd5953">#fd5953</color>
+    <color name="color_055760">#055760</color>
+    <color name="color_7C64E3">#7C64E3</color>
+    <color name="color_ffee41">#ffee41</color>
+    <color name="color_f6f6f6">#F6F6F6</color>
+    <color name="transparent_border">#33ffffff</color>
+    <color name="transparent_loading_bg">#99000000</color>
+    <color name="color_757575">#757575</color>
+    <color name="color_9C7CEE">#9C7CEE</color>
+    <color name="color_655ADD">#655ADD</color>
+    <color name="color_f5f5f5">#f5f5f5</color>
+    <color name="color_f84272">#f84272</color>
+    <color name="color_ffce90">#ffce90</color>
+    <color name="color_ffd11c">#ffd11c</color>
+    <color name="color_ffe073">#ffe073</color>
+    <color name="color_37de93">#37de93</color>
+    <color name="color_f4f4f4">#f4f4f4</color>
+    <color name="color_444444">#444444</color>
+    <color name="color_b09371">#b09371</color>
+    <color name="color_26d2e2">#26d2e2</color>
+    <color name="color_e75b55">#e75b55</color>
+    <color name="color_9d9d9d">#9d9d9d</color>
+    <color name="color_fffbf4">#fffbf4</color>
+    <color name="color_fe5438">#fe5438</color>
+    <color name="color_eafefa">#eafefa</color>
+
+</resources>

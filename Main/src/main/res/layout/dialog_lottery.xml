@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/ivLottery"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_8"
+        android:src="@drawable/lottery_bg"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/ivClose"
+        android:src="@drawable/btn_close_lottery"
+        android:layout_marginRight="@dimen/dp_33"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="@dimen/dp_27"
+        android:layout_height="@dimen/dp_27" />
+    <TextView
+        android:id="@+id/tv_date"
+        tools:text="最后1天"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_23"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/ivClose"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintVertical_bias="0.028"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <com.laka.androidlib.widget.SelectorButton
+        android:id="@+id/tv_try"
+        android:text="试试手气"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_16"
+        android:layout_marginTop="@dimen/dp_47"
+        android:gravity="center"
+        app:bg_radius="50dp"
+        app:bga_color="@color/color_fe5438"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivLottery"
+        android:layout_width="@dimen/dp_196"
+        android:layout_height="@dimen/dp_45" />
+</android.support.constraint.ConstraintLayout>

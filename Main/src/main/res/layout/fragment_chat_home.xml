@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_common_bg">
+
+    <com.laka.androidlib.widget.titlebar.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_chat_notification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_main"
+        android:drawableLeft="@drawable/ic_chat_notification"
+        android:drawablePadding="@dimen/dp_6"
+        android:gravity="center_vertical"
+        android:paddingBottom="@dimen/dp_8"
+        android:paddingLeft="@dimen/dp_14"
+        android:paddingRight="@dimen/dp_14"
+        android:paddingTop="@dimen/dp_8"
+        android:text="恭喜【煎饺】付款订单获得2.19元"
+        android:textColor="@color/white"
+        android:textSize="@dimen/normal_font_size_small"
+        app:layout_constraintTop_toBottomOf="@id/title_bar" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_chat_function_board"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="#19000000"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_chat_audio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_4"
+            android:src="@drawable/selector_chat_audio"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_chat_message_input"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:background="@drawable/bg_chat_input"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHeight_percent=".7"
+            app:layout_constraintLeft_toRightOf="@id/iv_chat_audio"
+            app:layout_constraintRight_toLeftOf="@+id/iv_chat_emoji"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_chat_emoji"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_4"
+            android:padding="@dimen/dp_4"
+            android:src="@drawable/selector_chat_emoji"
+            app:layout_constraintBottom_toBottomOf="@id/iv_chat_audio"
+            app:layout_constraintRight_toLeftOf="@+id/iv_chat_function"
+            app:layout_constraintTop_toTopOf="@id/iv_chat_audio" />
+
+        <ImageView
+            android:id="@+id/iv_chat_function"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_4"
+            android:src="@drawable/selector_chat_function"
+            app:layout_constraintBottom_toBottomOf="@id/iv_chat_audio"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_chat_audio" />
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>

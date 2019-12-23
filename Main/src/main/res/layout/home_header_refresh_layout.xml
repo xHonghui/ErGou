@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!--  app:layout_constraintDimensionRatio="h,35:74"
+        h/w：已知的宽或者高，不写出来的部分表示通过比例推导
+    -->
+    <!--<com.laka.ergou.common.widget.CustomRefreshProgressBar-->
+    <!--android:id="@+id/pull_to_refresh_progress"-->
+    <!--style="?android:attr/progressBarStyleSmall"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="@dimen/dp_50"-->
+    <!--android:indeterminate="true"-->
+    <!--android:paddingBottom="@dimen/dp_3"-->
+    <!--android:paddingLeft="@dimen/dp_6"-->
+    <!--android:paddingRight="@dimen/dp_6"-->
+    <!--android:paddingTop="@dimen/dp_3"-->
+    <!--android:visibility="visible"-->
+    <!--app:layout_constraintDimensionRatio="h,10:21"-->
+    <!--app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--app:layout_constraintRight_toRightOf="parent"-->
+    <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+    <ImageView
+        android:id="@+id/iv_loading"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_50"
+        android:indeterminate="true"
+        android:paddingLeft="@dimen/dp_6"
+        android:paddingTop="@dimen/dp_3"
+        android:paddingRight="@dimen/dp_6"
+        android:paddingBottom="@dimen/dp_3"
+        app:layout_constraintDimensionRatio="h,10:21"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

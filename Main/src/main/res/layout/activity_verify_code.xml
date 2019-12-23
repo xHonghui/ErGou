@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_common_bg">
+
+    <com.laka.androidlib.widget.titlebar.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/normal_title_bar_height"
+        android:background="@color/white" />
+
+    <TextView
+        android:id="@+id/tv_verify_code_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_13"
+        android:layout_marginTop="@dimen/dp_24"
+        android:text="@string/change_phone_verify_code_hint"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_bar" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_verify_code_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_18"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/tv_verify_code_phone">
+
+        <EditText
+            android:id="@+id/et_verify_code_input"
+            style="@style/DefaultInputEditText"
+            android:layout_width="0dp"
+            android:background="@null"
+            android:hint="@string/please_enter_verification_code"
+            android:inputType="number"
+            android:maxEms="6"
+            android:maxLength="6"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/view_verify_code_divider" />
+
+        <View
+            android:id="@+id/view_verify_code_divider"
+            android:layout_width="@dimen/dp_0.1"
+            android:layout_height="0dp"
+            android:layout_marginRight="@dimen/dp_34"
+            android:background="@color/color_divider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHeight_percent=".5"
+            app:layout_constraintRight_toLeftOf="@+id/tv_verify_code_get_code"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_verify_code_get_code"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginRight="@dimen/dp_25"
+            android:gravity="center"
+            android:padding="@dimen/dp_10"
+            android:text="@string/get_verification_code"
+            android:textColor="@color/color_05a585"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <com.laka.androidlib.widget.SelectorButton
+        android:id="@+id/btn_verify_code"
+        style="@style/DefaultMainButton"
+        android:text="@string/ensure"
+        app:bg_radius="@dimen/dp_5"
+        app:bga_color="@color/color_main"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_verify_code_input" />
+
+</android.support.constraint.ConstraintLayout>

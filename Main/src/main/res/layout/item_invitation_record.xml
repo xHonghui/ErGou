@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_user_info"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingLeft="@dimen/dp_18"
+    android:paddingRight="@dimen/dp_18"
+    android:paddingTop="@dimen/dp_18">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="@dimen/dp_45"
+        app:riv_corner_radius="@dimen/dp_4"
+        android:layout_height="@dimen/dp_45"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/tv_user_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginRight="@dimen/dp_10"
+        android:ellipsize="end"
+        android:gravity="left"
+        android:maxLines="1"
+        android:textColor="@color/color_525252"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintLeft_toRightOf="@+id/iv_avatar"
+        app:layout_constraintRight_toLeftOf="@+id/tv_royalty_commission" />
+
+    <TextView
+        android:id="@+id/tv_des"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:ellipsize="end"
+        android:gravity="left"
+        android:maxLines="1"
+        android:textColor="@color/color_aaaaaa"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_avatar"
+        app:layout_constraintLeft_toRightOf="@+id/iv_avatar"
+        app:layout_constraintRight_toLeftOf="@+id/tv_royalty_txt" />
+
+
+    <TextView
+        android:id="@+id/tv_royalty_commission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:maxLines="1"
+        android:textColor="@color/color_05a585"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_royalty_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:maxLines="1"
+        android:textColor="@color/color_aaaaaa"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_avatar"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_marginTop="@dimen/dp_18"
+        android:background="@color/color_theme_bg"
+        app:layout_constraintTop_toBottomOf="@+id/iv_avatar" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="FlingBehavior">com.laka.androidlib.widget.behavior.FlingBehavior</string>
+    <string name="please_install_weixin">请先到应用市场安装微信</string>
+
+    <string name="picker_year">年</string>
+    <string name="picker_month">月</string>
+    <string name="picker_day">日</string>
+    <string name="time_yesterday">昨天</string>
+</resources>

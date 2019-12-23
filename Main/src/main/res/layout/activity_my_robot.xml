@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_common_bg">
+
+    <com.laka.androidlib.widget.titlebar.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/normal_title_bar_height"
+        android:background="@color/white"
+        app:bottom_divider_visibility="true" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_robot_info"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_bar">
+
+        <TextView
+            android:id="@+id/tv_robot_qr_code_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/robot_title_hint"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_15"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias=".08" />
+
+        <ImageView
+            android:id="@+id/iv_robot_qr_code"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@drawable/shape_qr_code_out_react"
+            android:padding="@dimen/dp_10"
+            android:visibility="invisible"
+            app:layout_constraintHeight_percent=".38"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_robot_qr_code_title"
+            app:layout_constraintWidth_percent=".74" />
+
+        <android.support.v4.widget.Space
+            android:id="@+id/robot_space"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_24"
+            app:layout_constraintBottom_toBottomOf="@id/iv_robot_qr_code" />
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_qr_code"
+            android:paddingBottom="@dimen/dp_24"
+            android:paddingTop="@dimen/dp_24"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/robot_space"
+            app:layout_constraintWidth_percent=".884">
+
+            <TextView
+                android:id="@+id/tv_robot_identify_qr_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:letterSpacing="-0.02"
+                android:text="@string/robot_identify_qr_code"
+                android:textColor="@color/color_main"
+                android:textSize="@dimen/normal_font_size"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <ImageView
+                android:layout_width="@dimen/dp_18"
+                android:layout_height="@dimen/dp_18"
+                android:layout_marginLeft="@dimen/dp_4"
+                android:src="@drawable/ic_qr_code_print"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/tv_robot_identify_qr_code"
+                app:layout_constraintLeft_toRightOf="@id/tv_robot_identify_qr_code"
+                app:layout_constraintTop_toTopOf="@id/tv_robot_identify_qr_code" />
+
+            <TextView
+                android:id="@+id/tv_robot_exclusive_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:letterSpacing="-0.02"
+                android:text="@string/robot_wechat_id_hint"
+                android:textColor="@color/black"
+                android:textSize="@dimen/normal_font_size_13"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_robot_identify_qr_code" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_robot_copy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/btn_qr_code_copy"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_robot_exclusive_hint"
+                app:layout_constraintWidth_percent=".74">
+
+                <TextView
+                    android:id="@+id/tv_robot_we_chat_id"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:text=""
+                    android:textColor="@color/color_main"
+                    android:textSize="@dimen/normal_font_size_big"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias=".06"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent=".5" />
+
+                <TextView
+                    android:id="@+id/tv_robot_we_chat_copy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp_10"
+                    android:text="@string/copy"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/normal_font_size_big"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_robot_we_chat_id"
+                    app:layout_constraintHorizontal_bias=".85"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_robot_we_chat_id" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_robot_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:padding="@dimen/dp_10"
+            android:text="@string/robot_question_hint"
+            android:textColor="@color/gray_88"
+            android:textSize="@dimen/sp_13"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <ViewStub
+        android:id="@+id/stub_robot_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout="@layout/layout_my_robot_list"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_bar" />
+
+    <!-- 暂时先嵌套到页面内 -->
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_robot_error"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_robot_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_no_data"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_robot_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="@string/no_data_hint"
+            android:textColor="@color/color_font"
+            app:layout_constraintLeft_toLeftOf="@id/iv_robot_error"
+            app:layout_constraintRight_toRightOf="@id/iv_robot_error"
+            app:layout_constraintTop_toBottomOf="@id/iv_robot_error" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>

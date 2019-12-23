@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.laka.ergou.common.widget.PagerListTabView
+        android:id="@+id/plbv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/dp_10"
+        android:paddingLeft="@dimen/dp_15"
+        android:paddingRight="@dimen/dp_15"
+        android:paddingTop="@dimen/dp_10"
+        app:tab_left_txt="左边tab"
+        app:tab_right_txt="右边tab" />
+
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="switchTab"
+        android:text="切换左右tab"
+        app:layout_constraintTop_toBottomOf="@+id/plbv" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="changeText"
+        android:text="更改文案"
+        app:layout_constraintTop_toBottomOf="@+id/btn1" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_common_bg">
+
+    <com.laka.androidlib.widget.titlebar.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/normal_title_bar_height" />
+
+    <EditText
+        android:id="@+id/et_change_phone_input"
+        style="@style/DefaultInputEditText"
+        android:hint="@string/please_enter_your_mobile_phone_number"
+        android:inputType="number"
+        android:maxLength="11"
+        app:layout_constraintTop_toBottomOf="@id/title_bar" />
+
+    <ImageView
+        android:id="@+id/iv_change_phone_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp_10"
+        android:padding="@dimen/dp_10"
+        android:src="@drawable/btn_delete_round"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/et_change_phone_input"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/et_change_phone_input" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_change_phone_error_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_10"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/et_change_phone_input">
+
+        <ImageView
+            android:id="@+id/iv_change_phone_status"
+            android:layout_width="@dimen/dp_16"
+            android:layout_height="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_1"
+            android:src="@drawable/ic_notice_round"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_change_phone_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="@string/change_phone_error_hint"
+            android:textColor="@color/color_main"
+            android:textSize="@dimen/sp_13"
+            app:layout_constraintLeft_toRightOf="@id/iv_change_phone_status"
+            app:layout_constraintRight_toRightOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+
+    <com.laka.androidlib.widget.SelectorButton
+        android:id="@+id/btn_change_phone"
+        style="@style/DefaultMainButton"
+        android:text="@string/get_verification_code"
+        app:bg_radius="@dimen/dp_5"
+        app:bga_color="@color/color_main"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_change_phone_error_hint"
+        app:press_text_color="@color/white" />
+
+</android.support.constraint.ConstraintLayout>

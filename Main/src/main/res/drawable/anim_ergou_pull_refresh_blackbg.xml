@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false"
+    android:variablePadding="true">
+
+    <item
+        android:drawable="@drawable/loading_page00"
+        android:duration="60" />
+    <!--<item-->
+        <!--android:drawable="@drawable/loading_page01"-->
+        <!--android:duration="60" />-->
+
+    <item
+        android:drawable="@drawable/loading_page02"
+        android:duration="60" />
+
+    <!--<item-->
+        <!--android:drawable="@drawable/loading_page03"-->
+        <!--android:duration="60" />-->
+
+    <item
+        android:drawable="@drawable/loading_page04"
+        android:duration="60" />
+
+    <!--<item-->
+        <!--android:drawable="@drawable/loading_page05"-->
+        <!--android:duration="60" />-->
+
+    <item
+        android:drawable="@drawable/loading_page06"
+        android:duration="60" />
+
+    <!--<item-->
+        <!--android:drawable="@drawable/loading_page07"-->
+        <!--android:duration="60" />-->
+
+    <item
+        android:drawable="@drawable/loading_page08"
+        android:duration="60" />
+
+    <!--<item-->
+        <!--android:drawable="@drawable/loading_page09"-->
+        <!--android:duration="60" />-->
+
+    <item
+        android:drawable="@drawable/loading_page10"
+        android:duration="60" />
+
+    <!--<item-->
+        <!--android:drawable="@drawable/loading_page11"-->
+        <!--android:duration="60" />-->
+
+    <item
+        android:drawable="@drawable/loading_page12"
+        android:duration="60" />
+
+    <!--<item-->
+        <!--android:drawable="@drawable/loading_page13"-->
+        <!--android:duration="60" />-->
+
+    <item
+        android:drawable="@drawable/loading_page14"
+        android:duration="60" />
+
+    <!--<item-->
+        <!--android:drawable="@drawable/loading_page15"-->
+        <!--android:duration="60" />-->
+
+    <item
+        android:drawable="@drawable/loading_page16"
+        android:duration="60" />
+
+    <!--<item-->
+        <!--android:drawable="@drawable/loading_page17"-->
+        <!--android:duration="60" />-->
+
+    <item
+        android:drawable="@drawable/loading_page18"
+        android:duration="60" />
+
+    <!--<item-->
+        <!--android:drawable="@drawable/loading_page19"-->
+        <!--android:duration="60" />-->
+
+    <item
+        android:drawable="@drawable/loading_page20"
+        android:duration="60" />
+
+    <!--<item-->
+        <!--android:drawable="@drawable/loading_page21"-->
+        <!--android:duration="60" />-->
+
+    <item
+        android:drawable="@drawable/loading_page22"
+        android:duration="60" />
+
+    <!--<item-->
+        <!--android:drawable="@drawable/loading_page23"-->
+        <!--android:duration="60" />-->
+
+    <item
+        android:drawable="@drawable/loading_page24"
+        android:duration="60" />
+
+    <!--<item-->
+        <!--android:drawable="@drawable/loading_page25"-->
+        <!--android:duration="60" />-->
+
+    <item
+        android:drawable="@drawable/loading_page26"
+        android:duration="60" />
+
+    <!--<item-->
+        <!--android:drawable="@drawable/loading_page27"-->
+        <!--android:duration="60" />-->
+
+    <item
+        android:drawable="@drawable/loading_page28"
+        android:duration="60" />
+
+    <!--<item-->
+        <!--android:drawable="@drawable/loading_page29"-->
+        <!--android:duration="60" />-->
+
+    <item
+        android:drawable="@drawable/loading_page30"
+        android:duration="60" />
+
+    <!--<item-->
+        <!--android:drawable="@drawable/loading_page31"-->
+        <!--android:duration="60" />-->
+
+    <item
+        android:drawable="@drawable/loading_page32"
+        android:duration="60" />
+
+    <!--<item-->
+        <!--android:drawable="@drawable/loading_page33"-->
+        <!--android:duration="60" />-->
+
+    <item
+        android:drawable="@drawable/loading_page34"
+        android:duration="60" />
+
+    <!--<item-->
+        <!--android:drawable="@drawable/loading_page35"-->
+        <!--android:duration="60" />-->
+
+    <item
+        android:drawable="@drawable/loading_page36"
+        android:duration="60" />
+
+    <!--<item-->
+        <!--android:drawable="@drawable/loading_page37"-->
+        <!--android:duration="60" />-->
+
+    <item
+        android:drawable="@drawable/loading_page38"
+        android:duration="60" />
+
+    <!--<item-->
+        <!--android:drawable="@drawable/loading_page39"-->
+        <!--android:duration="60" />-->
+
+    <item
+        android:drawable="@drawable/loading_page40"
+        android:duration="60" />
+
+    <!--<item-->
+        <!--android:drawable="@drawable/loading_page41"-->
+        <!--android:duration="60" />-->
+
+    <item
+        android:drawable="@drawable/loading_page42"
+        android:duration="60" />
+
+    <!--<item-->
+        <!--android:drawable="@drawable/loading_page43"-->
+        <!--android:duration="60" />-->
+
+    <item
+        android:drawable="@drawable/loading_page44"
+        android:duration="60" />
+
+    <!--<item-->
+        <!--android:drawable="@drawable/loading_page45"-->
+        <!--android:duration="60" />-->
+
+    <item
+        android:drawable="@drawable/loading_page46"
+        android:duration="60" />
+
+    <!--<item-->
+        <!--android:drawable="@drawable/loading_page47"-->
+        <!--android:duration="60" />-->
+
+    <item
+        android:drawable="@drawable/loading_page48"
+        android:duration="60" />
+
+    <!--<item-->
+        <!--android:drawable="@drawable/loading_page49"-->
+        <!--android:duration="60" />-->
+
+    <item
+        android:drawable="@drawable/loading_page50"
+        android:duration="60" />
+
+    <!--<item-->
+        <!--android:drawable="@drawable/loading_page51"-->
+        <!--android:duration="60" />-->
+
+    <item
+        android:drawable="@drawable/loading_page52"
+        android:duration="60" />
+
+    <!--<item-->
+        <!--android:drawable="@drawable/loading_page53"-->
+        <!--android:duration="60" />-->
+
+    <item
+        android:drawable="@drawable/loading_page54"
+        android:duration="60" />
+
+    <!--<item-->
+        <!--android:drawable="@drawable/loading_page55"-->
+        <!--android:duration="60" />-->
+
+    <item
+        android:drawable="@drawable/loading_page56"
+        android:duration="60" />
+
+    <!--<item-->
+        <!--android:drawable="@drawable/loading_page57"-->
+        <!--android:duration="60" />-->
+
+    <item
+        android:drawable="@drawable/loading_page58"
+        android:duration="60" />
+
+    <!--<item-->
+        <!--android:drawable="@drawable/loading_page59"-->
+        <!--android:duration="60" />-->
+
+</animation-list>

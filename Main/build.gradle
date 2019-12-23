@@ -1,0 +1,230 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    // 当前版本号控制
+    def currentVersionCode = tryGetVersionCode()
+    def currentVersionName = tryGetVersionName(currentVersionCode)
+
+    defaultConfig {
+        applicationId rootProject.ext.android.applicationId
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode currentVersionCode
+        versionName currentVersionName
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi', "armeabi64", 'armeabi-v7a', 'arm64-v8a', 'x86_64', 'x86'
+        }
+
+        //极光推送配置
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: "com.laka.ergou",
+                JPUSH_APPKEY : "9fdea79207b3e67d95005bf6", //JPush 上注册的包名对应的 Appkey.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]
+
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    signingConfigs {
+        release {
+            keyAlias 'lakaergou'
+            keyPassword 'laka2016'
+            storePassword 'laka2016'
+            storeFile file('keystore/ergou.jks')
+        }
+        debug {
+            keyAlias 'lakaergou'
+            keyPassword 'laka2016'
+            storePassword 'laka2016'
+            storeFile file('keystore/ergou.jks')
+        }
+    }
+    buildTypes {
+        release {
+            versionNameSuffix ' (Release)'
+            minifyEnabled false
+            debuggable true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "ERGOU_BASE_HOST", "\"https://ergou-api.lakatv.com/v2.4.0/\"")
+            buildConfigField("String", "ERGOU_SOCKET_HOST", "\"im.fanli.lakatv.com\"")
+            buildConfigField("int", "ERGOU_SOCKET_POST", "8080")
+        }
+
+        debug {
+            versionNameSuffix ' (Debug)'
+            minifyEnabled false
+            debuggable true
+            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "ERGOU_BASE_HOST", "\"http://ergou-api.test-fanli.lakatv.com/v2.2.0/\"")
+            buildConfigField("String", "ERGOU_SOCKET_HOST", "\"192.168.176.23\"")
+            buildConfigField("int", "ERGOU_SOCKET_POST", "8080")
+        }
+    }
+
+    // 打包配置(gradle3.3以上)
+    def appName = "ergou"
+    android.applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def outputFile = output.outputFile
+            def fileName
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                if (variant.buildType.name == 'release') {
+                    // variant.mergedFlavor.versionName = tryGetVersionName() 更改版本名称
+                    fileName = "${appName}_v${variant.mergedFlavor.versionName}_${variant.buildType.name}.apk"
+                } else if (variant.buildType.name == 'debug') {
+                    fileName = "${appName}_v${variant.mergedFlavor.versionName}_${releaseTime()}_${variant.buildType.name}.apk"
+                }
+                outputFileName = fileName
+            }
+        }
+    }
+}
+
+def releaseTime() {
+    return new Date(new Date().getTime() + 8 * 60 * 60 * 1000).format("yyyyMMddHHmm", TimeZone.getTimeZone("UTC"))
+}
+
+def tryGetVersionName(def versionCode) {
+    def versionFile = file('version.properties')
+    if (versionFile.canRead()) {
+        def Properties versionProps = new Properties()
+        versionProps.load(new FileInputStream(versionFile))
+        def major = versionProps['MAJOR'].toString()
+        def minor = versionProps['MINOR'].toString()
+        def maintenance = versionProps['MAINTENANCE'].toString()
+        def versionName = String.format(java.util.Locale.US, "%s.%s.%s(.%d)",
+                major, minor, maintenance, versionCode)
+        return versionName
+    } else {
+        throw new GradleException("Could not find version.properties!")
+    }
+}
+
+def tryGetVersionCode() {
+    def versionFile = file('version.properties')
+    if (versionFile.canRead()) {
+        def Properties versionProps = new Properties()
+        versionProps.load(new FileInputStream(versionFile))
+        def versionCode = versionProps['VERSION_CODE'].toInteger()
+        def runTasks = gradle.startParameter.taskNames
+        logger.error("runTasks : " + runTasks);
+        if (':Main:assembleRelease' in runTasks || 'assembleRelease' in runTasks || 'aR' in runTasks) {
+            versionProps['VERSION_CODE'] = (++versionCode).toString()
+            versionProps.store(versionFile.newWriter(), null)
+        }
+        return versionCode
+    } else {
+        throw new GradleException("Could not find version.properties!")
+    }
+}
+
+configurations.all {
+    resolutionStrategy.force 'com.android.support:support-annotations:27.1.1'
+}
+
+dependencies {
+
+    // 测试依赖
+    testCompile 'junit:junit:4.12'
+    androidTestCompile 'com.android.support.test:runner:1.0.2'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:3.0.2'
+    compile 'com.android.support.constraint:constraint-layout:1.1.3'
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    // 本地库依赖
+    compile project(':androidlib')
+
+    // 阿里百川相关引入
+    // 支付（可选）
+    compile 'com.alipay.android.app.cashier:standardcashier-single:15.6.5@aar'
+    compileOnly 'com.alipay.mobile.android.securitysdk:apsecuritysdk-all:3.3.0'
+    // 登录
+    compile 'com.ali.auth.sdk:alibabauth_core:2.0.0.6@aar'
+    compile 'com.ali.auth.sdk:alibabauth_ui:2.0.0.6@aar'
+    compile 'com.ali.auth.sdk:alibabauth_ext:2.0.0.6@aar'
+    //安全基础
+    compile 'com.taobao.android:securityguardaar3:5.4.171@aar'
+    compile 'com.taobao.android:securitybodyaar3:5.4.99@aar'
+    compile 'com.taobao.android:avmpaar3:5.4.36@aar'
+    compile 'com.taobao.android:sgmiddletieraar3:5.4.9@aar'
+    //Mtop网关
+    compile 'com.taobao.android:mtopsdk_allinone_open:3.1.2.5@jar'
+    //applink
+    compile 'com.alibaba.sdk.android:alibc_link_partner:4.1.15@aar'
+    //ut
+    compile 'com.taobao.android:utdid4all:1.5.2'
+    compile 'com.alibaba.mtl:app-monitor-sdk:2.6.4.5_for_bc'
+    //联盟SDK
+    compile 'com.alimama.tunion.sdk:tuniontradesdk:0.3.2@aar'
+    //电商SDK
+    compile 'com.alibaba.sdk.android:AlibcTradeCommon:4.0.0.8@aar'
+    compile 'com.alibaba.sdk.android:AlibcTradeBiz:4.0.0.8@aar'
+    compile 'com.alibaba.sdk.android:nb_trade:4.0.0.8@aar'
+    compile 'com.alibaba:fastjson:1.2.41'
+
+    // 阿里云 OSS
+    compile 'com.aliyun.dpa:oss-android-sdk:+'
+
+    // bugly
+    compile 'com.tencent.bugly:crashreport:2.8.6'
+    compile 'com.tencent.bugly:nativecrashreport:3.6.0'
+
+    // UI库
+    //jz视频播放器
+    compile 'cn.jzvd:jiaozivideoplayer:6.3.1'
+    compile 'com.github.chrisbanes:PhotoView:2.0.0'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.lqr.imagepicker:library:1.0.0'
+    compile 'com.lqr.ninegridimageview:library:1.0.0'
+    compile 'com.lqr.optionitemview:library:1.0.7'
+
+    // 表情包 library
+    compile 'com.lqr.audio:library:1.0.0'
+    compile 'com.lqr.imagepicker:library:1.0.0'
+    compile 'cjt.library.wheel:camera:0.1.9'
+    compile 'com.zhy:autolayout:1.4.5'
+
+    //compile 'cn.bingoogolapple:bga-refreshlayout:1.1.7'
+    compile files('libs/joda-time-2.5.jar')
+    compile files('libs/joda-time-2.5-sources.jar')
+    compile project(':emojilibrary')
+//    implementation 'com.github.iielse:ImageWatcher:1.1.5'
+    //leakcanary
+    debugCompile rootProject.ext.dependencies["leakCanaryDebug"]
+    releaseCompile rootProject.ext.dependencies["leakCanaryRelease"]
+    testCompile rootProject.ext.dependencies["leakCanaryRelease"]
+
+    //Skeleton Screen（骨架屏）框架
+    compile rootProject.ext.dependencies["skeleton"]
+    compile rootProject.ext.dependencies["shimmerlayout"]
+
+    // proto_buffer.版本需要和编译protobuf文件的版本一致
+    compile rootProject.ext.dependencies["protobuf"]
+
+    // 数据库
+    compile rootProject.ext.dependencies["wcdb"]
+
+    // 极光推送SDK
+    compile rootProject.ext.dependencies["jpush"]
+    compile rootProject.ext.dependencies["jcore"]
+
+    //极光认证
+    //compile 'cn.jiguang.sdk:jverification:2.5.2'
+}

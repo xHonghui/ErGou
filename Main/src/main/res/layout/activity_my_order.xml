@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.laka.androidlib.widget.titlebar.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title_text="我的订单" />
+
+
+    <!-- 分类信息 -->
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_order_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/title_bar"
+        app:tabBackground="@android:color/transparent"
+        app:tabIndicatorColor="@color/color_main"
+        app:tabSelectedTextColor="@color/color_red_fa5e5e"
+        app:tabTextColor="@color/color_black_656565" />
+
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/color_divider"
+        app:layout_constraintTop_toBottomOf="@+id/tab_order_type" />
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager_order"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_line" />
+
+
+</android.support.constraint.ConstraintLayout>

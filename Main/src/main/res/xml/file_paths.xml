@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+
+    <external-path
+        name="files_root"
+        path="Android/data/com.laka.ergou/" />
+
+    <external-path
+        name="external_storage_root"
+        path="." />
+
+    <!--<files-path-->
+        <!--name="files_root"-->
+        <!--path="Android/data/com.laka.ergou/" />-->
+
+    <!--<cache-path-->
+        <!--name="files_root"-->
+        <!--path="Android/data/com.laka.ergou/" />-->
+
+</paths>

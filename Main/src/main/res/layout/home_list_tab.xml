@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="44dp"
+    android:orientation="horizontal">
+    <TextView
+        android:id="@+id/tab_view_tv"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:layout_height="match_parent"
+        tools:context="com.darren.view_day22.MainActivity"/>
+    <ImageView
+        android:id="@+id/iv_status"
+        android:layout_marginLeft="@dimen/dp_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>

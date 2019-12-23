@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.laka.androidlib.widget.titlebar.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title_text="设置" />
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refresh_personal_data"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/color_common_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_bar"
+        app:layout_constraintVertical_bias="1.0"
+        app:srlDragRate="0.75"
+        app:srlEnableLoadMore="false"
+        app:srlEnablePureScrollMode="true"
+        app:srlEnableRefresh="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/dp_10">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_user_avatar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_70"
+                android:background="@drawable/btn_common_white">
+
+                <TextView
+                    android:id="@+id/tv_user_avatar"
+                    style="@style/UserInfoItemTitleTextStyle"
+                    android:text="@string/user_info_avatar"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.laka.androidlib.widget.CircleImageView
+                    android:id="@+id/iv_user_avatar"
+                    android:layout_width="@dimen/dp_46"
+                    android:layout_height="@dimen/dp_46"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:src="@drawable/ic_user_default_avatar"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_user_avatar"
+                    app:layout_constraintRight_toLeftOf="@+id/iv_user_avatar_more"
+                    app:layout_constraintTop_toTopOf="@+id/iv_user_avatar_more" />
+
+                <ImageView
+                    android:id="@+id/iv_user_avatar_more"
+                    style="@style/MoreArrowUI"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_user_avatar"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_user_avatar" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_1" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:background="@drawable/btn_common_white">
+
+                <TextView
+                    android:id="@+id/tv_user_name_hint"
+                    style="@style/UserInfoItemTitleTextStyle"
+                    android:text="@string/user_info_name"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_user_name"
+                    style="@style/UserInfoItemTextStyle"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_user_name_hint"
+                    app:layout_constraintRight_toLeftOf="@+id/iv_user_name_more"
+                    app:layout_constraintTop_toTopOf="@id/tv_user_name_hint" />
+
+                <ImageView
+                    android:id="@+id/iv_user_name_more"
+                    style="@style/MoreArrowUI"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_user_name_hint"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_user_name_hint" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_1" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_user_gender"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:background="@drawable/btn_common_white">
+
+                <TextView
+                    android:id="@+id/tv_user_gender_hint"
+                    style="@style/UserInfoItemTitleTextStyle"
+                    android:text="@string/user_info_gender"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_user_gender"
+                    style="@style/UserInfoItemTextStyle"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_user_gender_hint"
+                    app:layout_constraintRight_toLeftOf="@+id/iv_user_gender_more"
+                    app:layout_constraintTop_toTopOf="@id/tv_user_gender_hint" />
+
+                <ImageView
+                    android:id="@+id/iv_user_gender_more"
+                    style="@style/MoreArrowUI"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_user_gender_hint"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_user_gender_hint" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_10" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_bind_we_chat"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:background="@drawable/btn_common_white">
+
+                <TextView
+                    android:id="@+id/tv_bind_we_chat_hint"
+                    style="@style/UserInfoItemTitleTextStyle"
+                    android:text="@string/user_info_bind_we_chat"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_bind_we_chat"
+                    style="@style/UserInfoItemTextStyle"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_bind_we_chat_hint"
+                    app:layout_constraintRight_toLeftOf="@+id/iv_bind_we_chat_more"
+                    app:layout_constraintTop_toTopOf="@id/tv_bind_we_chat_hint" />
+
+                <ImageView
+                    android:id="@+id/iv_bind_we_chat_more"
+                    style="@style/MoreArrowUI"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_bind_we_chat_hint"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_bind_we_chat_hint" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_1" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_user_phone"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:background="@drawable/btn_common_white">
+
+                <TextView
+                    android:id="@+id/tv_user_phone_hint"
+                    style="@style/UserInfoItemTitleTextStyle"
+                    android:text="@string/user_info_phone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_user_phone"
+                    style="@style/UserInfoItemTextStyle"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_user_phone_hint"
+                    app:layout_constraintRight_toLeftOf="@+id/iv_user_phone_more"
+                    app:layout_constraintTop_toTopOf="@id/tv_user_phone_hint" />
+
+                <ImageView
+                    android:id="@+id/iv_user_phone_more"
+                    style="@style/MoreArrowUI"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_user_phone_hint"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_user_phone_hint" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_1" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_bind_ali_pay"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:background="@drawable/btn_common_white">
+
+                <TextView
+                    android:id="@+id/tv_bind_ali_pay_hint"
+                    style="@style/UserInfoItemTitleTextStyle"
+                    android:text="@string/user_info_bind_alipay"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_bind_ali_pay"
+                    style="@style/UserInfoItemTextStyle"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_bind_ali_pay_hint"
+                    app:layout_constraintRight_toLeftOf="@+id/iv_bind_ali_pay"
+                    app:layout_constraintTop_toTopOf="@id/tv_bind_ali_pay_hint" />
+
+                <ImageView
+                    android:id="@+id/iv_bind_ali_pay"
+                    style="@style/MoreArrowUI"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_bind_ali_pay_hint"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_bind_ali_pay_hint" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_1" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_bind_taobao_account"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:visibility="gone"
+                android:background="@drawable/btn_common_white">
+
+                <TextView
+                    android:id="@+id/tv_bind_taobao_account_hint"
+                    style="@style/UserInfoItemTitleTextStyle"
+                    android:text="@string/user_info_bind_taobao"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_bind_taobao_account"
+                    style="@style/UserInfoItemTextStyle"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_bind_taobao_account_hint"
+                    app:layout_constraintRight_toLeftOf="@+id/iv_bind_taobao_account"
+                    app:layout_constraintTop_toTopOf="@id/tv_bind_taobao_account_hint" />
+
+                <ImageView
+                    android:id="@+id/iv_bind_taobao_account"
+                    style="@style/MoreArrowUI"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_bind_taobao_account_hint"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_bind_taobao_account_hint" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_10" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_clear_cache"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:background="@drawable/btn_common_white">
+
+                <TextView
+                    android:id="@+id/tv_clear_cache_txt"
+                    style="@style/UserInfoItemTitleTextStyle"
+                    android:text="@string/clear_cache"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_clear_cache"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_1" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_about_us"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:background="@drawable/btn_common_white">
+
+                <TextView
+                    android:id="@+id/tv_about_us_txt"
+                    style="@style/UserInfoItemTitleTextStyle"
+                    android:text="@string/about_us"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_about_us"
+                    style="@style/MoreArrowUI"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_about_us_txt"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_about_us_txt" />
+
+            </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <TextView
+        android:id="@+id/tv_logout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="@color/white"
+        android:gravity="center"
+        android:text="退出登录"
+        android:textColor="@color/color_main"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

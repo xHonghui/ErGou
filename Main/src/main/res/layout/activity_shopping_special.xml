@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_common_bg">
+
+
+    <com.laka.androidlib.widget.titlebar.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--<ImageView-->
+        <!--android:id="@+id/iv_banner"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:scaleType="centerCrop"-->
+        <!--app:layout_constraintDimensionRatio="w,85:187"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/title_bar" />-->
+
+    <!--<View-->
+        <!--android:id="@+id/auxiliary_line"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1px"-->
+        <!--android:layout_marginBottom="@dimen/dp_20"-->
+        <!--app:layout_constraintBottom_toBottomOf="@+id/iv_banner" />-->
+
+    <!--android:layout_marginTop="@dimen/dp_180"-->
+    <com.laka.ergou.common.widget.refresh.FrogRefreshRecyclerView
+        android:id="@+id/rv_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_bar">
+
+    </com.laka.ergou.common.widget.refresh.FrogRefreshRecyclerView>
+
+
+    <View
+        android:id="@+id/view_place"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>

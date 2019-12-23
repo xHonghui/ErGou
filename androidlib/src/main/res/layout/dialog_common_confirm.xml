@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginLeft="@dimen/dp_50"
+    android:layout_marginRight="@dimen/dp_50"
+    android:background="@drawable/bg_common_confirm"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tv_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp_26"
+        android:gravity="center"
+        android:paddingLeft="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_20"
+        android:text="您确定要清理缓存吗？"
+        android:textColor="@color/black"
+        android:textSize="@dimen/normal_font_size" />
+
+    <View
+        android:id="@+id/line_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="@dimen/dp_26"
+        android:background="@color/color_gray"
+        app:layout_constraintTop_toBottomOf="@+id/tv_msg" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/color_306ee1"
+            android:textSize="@dimen/normal_font_size"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/line_vertical" />
+
+        <View
+            android:id="@+id/line_vertical"
+            android:layout_width="1px"
+            android:layout_height="wrap_content"
+            android:background="@color/color_gray"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_sure"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="@color/color_306ee1"
+            android:textSize="@dimen/normal_font_size"
+            app:layout_constraintLeft_toRightOf="@+id/line_vertical"
+            app:layout_constraintRight_toRightOf="parent" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

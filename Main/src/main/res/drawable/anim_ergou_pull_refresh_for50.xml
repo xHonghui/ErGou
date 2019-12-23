@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false"
+    android:variablePadding="true">
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading00"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading01"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading02"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading03"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading04"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading05"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading06"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading07"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading08"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading09"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading10"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading11"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading12"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading13"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading14"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading15"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading16"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading17"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading18"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading19"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading20"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading21"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading22"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading23"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading24"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading25"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading26"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading27"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading28"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading29"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading30"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading31"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading32"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading33"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading34"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading35"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading36"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading37"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading38"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading39"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading40"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading41"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading42"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading43"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading44"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading45"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading46"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading47"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading48"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading49"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading50"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading51"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading52"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading53"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading54"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading55"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading56"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading57"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading58"
+            android:gravity="center" />
+    </item>
+
+    <item android:duration="60">
+        <clip
+            android:clipOrientation="horizontal"
+            android:drawable="@drawable/loading59"
+            android:gravity="center" />
+    </item>
+
+</animation-list>

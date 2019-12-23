@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <!-- 显示加载框 -->
+    <include layout="@layout/item_chat_list_refresh"/>
+
+    <!-- 显示时间 -->
+        <!--android:background="@drawable/shape_notification_bg"-->
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:paddingBottom="2dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="2dp"
+        android:text="下午 5点"
+        android:textColor="@color/wechat_time_txt_color"
+        android:textSize="13sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:gravity="right"
+        android:orientation="horizontal"
+        android:paddingBottom="20dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="10dp">
+
+        <!-- 重试 -->
+        <LinearLayout
+            android:id="@+id/llError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvRetry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="重试"
+                android:visibility="gone" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivError"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:src="@mipmap/img_error" />
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/pbSending"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:visibility="gone" />
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_5"
+            android:background="@color/gray11"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginRight="10dp"
+                android:text="CSDN_LQR"
+                android:textColor="#666666"
+                android:textSize="12sp"
+                android:visibility="gone"
+                app:layout_constraintRight_toRightOf="parent" />
+
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/dp_10"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_10"
+                android:paddingTop="@dimen/dp_10"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autoLink="phone|email|map|web"
+                    android:ellipsize="end"
+                    android:gravity="left|center_vertical"
+                    android:linksClickable="true"
+                    android:maxLines="2"
+                    android:maxWidth="220dp"
+                    android:text="预返补贴:1.2 直减券:0.00 券后价:24.00"
+                    android:textColor="@color/black"
+                    android:textColorLink="#3655bf"
+                    android:textIsSelectable="true"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="3"
+                    android:maxWidth="170dp"
+                    android:text="【新年蚕丝可爱猪苹果x手机壳6s/7p/8plus防摔iphonexr/max卡通女款】"
+                    android:textColor="@color/gray10"
+                    android:textSize="@dimen/dp_11"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/iv_icon" />
+
+
+                <ImageView
+                    android:id="@+id/iv_icon"
+                    android:layout_width="@dimen/dp_45"
+                    android:layout_height="@dimen/dp_45"
+                    android:layout_marginRight="@dimen/dp_5"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:src="@drawable/default_img"
+                    app:layout_constraintRight_toLeftOf="@+id/tv_content"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.constraint.ConstraintLayout>
+        <!-- 人物头像 -->
+
+        <ImageView
+            android:id="@+id/ivAvatar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:src="@drawable/default_img" />
+    </LinearLayout>
+
+</LinearLayout>

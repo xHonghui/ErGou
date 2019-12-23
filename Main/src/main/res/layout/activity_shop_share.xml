@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/color_ffd11c"
+                app:layout_constraintDimensionRatio="w,80:187" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_video"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="@dimen/dp_72"
+                android:layout_marginRight="@dimen/dp_30"
+                android:layout_marginTop="@dimen/dp_70"
+                android:background="@drawable/share_img_book"
+                app:layout_constraintDimensionRatio="w,99:408"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_see_video_course"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_13"
+                    android:text="查看教程"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_15"
+                    app:layout_constraintHorizontal_bias="0.41"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_wiki"
+                    android:layout_width="@dimen/dp_17"
+                    android:layout_height="@dimen/dp_17"
+                    android:layout_marginRight="@dimen/dp_4"
+                    android:src="@drawable/default_icon_attention"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_see_video_course"
+                    app:layout_constraintRight_toLeftOf="@+id/tv_see_video_course"
+                    app:layout_constraintTop_toTopOf="@+id/tv_see_video_course" />
+
+                <ImageView
+                    android:id="@+id/iv_more"
+                    android:layout_width="@dimen/dp_17"
+                    android:layout_height="@dimen/dp_17"
+                    android:layout_marginRight="@dimen/dp_3"
+                    android:src="@drawable/default_btn_more_w"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_see_video_course"
+                    app:layout_constraintLeft_toRightOf="@+id/tv_see_video_course"
+                    app:layout_constraintTop_toTopOf="@+id/tv_see_video_course" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:gravity="center"
+                    android:text="分享后记得复制粘贴【朋友圈评论】"
+                    android:textColor="@color/color_b09371"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintHorizontal_bias="0.26"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_see_video_course" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_main_content"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/bg_share_content"
+                android:paddingBottom="@dimen/dp_16"
+                android:paddingLeft="@dimen/dp_20"
+                android:paddingTop="@dimen/dp_12"
+                app:layout_constraintTop_toBottomOf="@+id/cl_video">
+
+                <TextView
+                    android:id="@+id/tv_first_step"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="第一步：分享图片 粘贴标题"
+                    android:textColor="@color/color_303030"
+                    android:textSize="@dimen/sp_17" />
+
+                <TextView
+                    android:id="@+id/tv_check_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:text="选择商品图片"
+                    android:textColor="@color/color_aaaaaa"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_first_step" />
+
+                <HorizontalScrollView
+                    android:id="@+id/sv_share_horizontal_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_85"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:scrollbars="none"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_check_img">
+
+                    <LinearLayout
+                        android:id="@+id/ll_shop_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+                <TextView
+                    android:id="@+id/tv_share_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_24"
+                    android:text="分享图文到："
+                    android:textColor="@color/color_aaaaaa"
+                    android:textSize="@dimen/dp_14"
+                    app:layout_constraintTop_toBottomOf="@+id/sv_share_horizontal_img" />
+
+
+                <TextView
+                    android:id="@+id/tv_extension_reward"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/share_img_reward"
+                    android:gravity="center"
+                    android:text="成功推广奖励￥1.68"
+                    android:textColor="@color/color_ffe073"
+                    android:textSize="@dimen/sp_13"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_share_img"
+                    app:layout_constraintLeft_toRightOf="@+id/tv_share_img"
+                    app:layout_constraintTop_toTopOf="@+id/tv_share_img" />
+
+
+                <LinearLayout
+                    android:id="@+id/ll_wechat_share"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_45"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="horizontal"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_extension_reward">
+
+                    <com.laka.androidlib.widget.SelectorButton
+                        android:id="@+id/sb_friend_wechat"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="@dimen/dp_5"
+                        android:layout_weight="1"
+                        android:drawableLeft="@drawable/share_icon_wechat"
+                        android:drawablePadding="@dimen/dp_5"
+                        android:gravity="center"
+                        android:text="微信好友"
+                        android:textColor="@color/white"
+                        app:bg_radius="@dimen/dp_50"
+                        app:bga_color="@color/color_37de93" />
+
+                    <com.laka.androidlib.widget.SelectorButton
+                        android:id="@+id/sb_friend_circle"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/dp_5"
+                        android:layout_weight="1"
+                        android:drawableLeft="@drawable/share_icon_friend"
+                        android:drawablePadding="@dimen/dp_5"
+                        android:gravity="center"
+                        android:text="朋友圈"
+                        android:textColor="@color/white"
+                        app:bg_radius="@dimen/dp_50"
+                        app:bga_color="@color/color_26d2e2" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_second_step"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:text="第二步：复制粘贴朋友圈评论"
+                    android:textColor="@color/color_303030"
+                    android:textSize="@dimen/sp_17"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_wechat_share" />
+
+                <!-- 外层 ScrollView 的影响导致TextView无法滚动 -->
+                <TextView
+                    android:id="@+id/tv_share_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_130"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/bg_share_text"
+                    android:gravity="start|top"
+                    android:paddingLeft="@dimen/dp_5"
+                    android:paddingRight="@dimen/dp_5"
+                    android:paddingTop="@dimen/dp_5"
+                    android:scrollbars="vertical"
+                    android:textSize="@dimen/sp_13"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_second_step" />
+
+                <LinearLayout
+                    android:id="@+id/ll_share_comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="horizontal"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_share_text">
+
+                    <View
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/tv_share_comment1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/selector_share_comment_icon"
+                        android:drawablePadding="@dimen/dp_5"
+                        android:gravity="center"
+                        android:text="评论淘口令"
+                        android:textColor="@color/color_444444"
+                        android:textSize="@dimen/sp_13" />
+
+                    <View
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/tv_share_comment2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/selector_share_comment_icon"
+                        android:drawablePadding="@dimen/dp_5"
+                        android:gravity="center"
+                        android:text="评论下载链接"
+                        android:textColor="@color/color_444444"
+                        android:textSize="@dimen/sp_13" />
+
+                    <View
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/tv_share_comment3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/selector_share_comment_icon"
+                        android:drawablePadding="@dimen/dp_5"
+                        android:gravity="center"
+                        android:text="评论邀请码"
+                        android:textColor="@color/color_444444"
+                        android:textSize="@dimen/sp_13" />
+
+                    <View
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+                <com.laka.androidlib.widget.SelectorButton
+                    android:id="@+id/sb_copy_comment"
+                    android:layout_width="@dimen/dp_200"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_18"
+                    android:gravity="center"
+                    android:text="复制朋友圈评论"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_16"
+                    app:bg_radius="@dimen/dp_50"
+                    app:bga_color="@color/color_main"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_share_comment" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_8"
+            android:paddingBottom="@dimen/dp_2"
+            android:paddingLeft="@dimen/dp_5"
+            android:paddingRight="@dimen/dp_5"
+            android:paddingTop="@dimen/dp_2"
+            android:src="@drawable/selector_nav_btn_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="分享商品"
+            android:textColor="@color/color_303030"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <include layout="@layout/activity_see_share_image"/>
+
+</android.support.constraint.ConstraintLayout>
